@@ -1,9 +1,10 @@
-<div class="container">
-    <app-title [libelle]="ROUTER_PARAM_SLUG" [color]="'#F9F8F4'" />
 
-    <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.
-
-    <div class="container-page container-page__grid">
-        <app-list-card-anime [animes]="animes" [sortBy]="'startDate'" />
+<div class="genre">
+    <div class="container">
+        <app-title [libelle]="ROUTER_PARAM_SLUG" [color]="'#202020'" />
+        <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.
+        <div class="container-page container-page__grid">
+            <app-relationship *ngFor="let relation of animes; trackBy:trackByFn" [relationship]="relation"/>
+        </div>
     </div>
 </div>

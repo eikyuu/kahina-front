@@ -1,24 +1,19 @@
-import { Component, Input, OnInit, inject } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ListCardAnimeComponent } from '../../composants/animes/list-card-anime/list-card-anime.component';
-import { AnimesService } from '../../@core/services/animes/animes.service';
-import { ActivatedRoute } from '@angular/router';
 import * as _ from 'lodash';
-import { Title } from '@angular/platform-browser';
 import { TitleComponent } from '../../ui/title/title.component';
+import { RelationshipComponent } from '../../ui/relationship/relationship.component';
+import { PageDirective } from '../../@core/directives/page.directive';
 
 @Component({
   selector: 'app-genre',
   standalone: true,
-  imports: [CommonModule, ListCardAnimeComponent, TitleComponent],
+  imports: [CommonModule, RelationshipComponent, TitleComponent],
   templateUrl: './genre.component.html',
   styleUrls: ['./genre.component.scss']
 })
-export class GenreComponent implements OnInit {
+export class GenreComponent extends PageDirective implements OnInit {
 
-  private animesService = inject(AnimesService);
-  private route = inject(ActivatedRoute);
-  private titleService = inject(Title);
   public _animes: any;
 
   ROUTER_PARAM_SLUG = this.route.snapshot.params['slug'];
