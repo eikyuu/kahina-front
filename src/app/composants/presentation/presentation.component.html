@@ -1,0 +1,17 @@
+<div *ngIf="presentation" class="presentation container-white container-white--border">
+    <app-scoring *ngIf="presentation.score" [score]="presentation.score"/>
+    <div class="presentation__poster">
+        <img class="presentation__img" [src]="imageUrl"
+        alt="Kimi no Na Wa.">
+        <div class="presentation__btn">
+            <app-upvote [upvote]="presentation.upVoteCount" class="mb-1" (click)="updateVote()" />
+            <app-button [libelle]="'Ajouter à ma liste'" (click)="addToList()"/>
+        </div>
+    </div>
+    <div class="presentation__content">
+        <h1>{{presentation.title}}</h1>
+        <p>
+            {{presentation.synopsis}}
+        </p>
+    </div>
+</div>

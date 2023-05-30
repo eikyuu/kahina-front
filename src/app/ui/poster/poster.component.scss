@@ -1,0 +1,17 @@
+@import "../../../themes/app.scss";
+
+.poster {
+    &__img {
+        width: 90vw;
+        height: 350px;
+        border-radius: 10px;
+    }
+}
+
+@include respond-to("tablet") {
+    .poster {
+        &__img {
+            width: calc($max-width / 4 - 1rem);
+        }
+    }
+}

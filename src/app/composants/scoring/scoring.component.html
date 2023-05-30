@@ -1,0 +1,16 @@
+<div class="scoring">
+  <div class="scoring__ctn">
+    <app-button
+      [libelle]="'SCORE'"
+      [background]="'#D9D9D9'"
+      [color]="'#202020'"
+    />
+    <p class="scoring__score">{{score.note}}</p>
+  </div>
+
+  <div class="scoring__stats">
+    <p>{{score.userCount}} membres</p>
+    <p>Rang #{{score.ratingRank}}</p>
+    <p>Popularité #{{score.popularityRank}}</p>
+  </div>
+</div>

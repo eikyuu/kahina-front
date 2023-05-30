@@ -1,0 +1,21 @@
+@import "../../../themes/app.scss";
+
+.themes {
+    background: $primary;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+}
+
+@include respond-to("desktop") {
+    .container-page {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        app-card-character {
+            margin-bottom: 1rem;
+        }
+    }
+}
+

@@ -1,0 +1,16 @@
+@import "../../../themes/app.scss";
+
+.button {
+    color: $white;
+    font-size: 1rem;
+    background: $black;
+    border: none;
+    border-radius: 10px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+        background: $primary!important;
+        color: #000!important;
+    }
+}

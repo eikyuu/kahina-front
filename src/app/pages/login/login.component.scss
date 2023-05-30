@@ -1,0 +1,12 @@
+@import "../../../themes/app.scss";
+
+.login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ffffff;
+    margin-top: 2rem;
+    padding: 2rem;
+    border-radius: 10px 10px 0 0;
+    border-bottom: solid 4px $primary;
+}

@@ -1,0 +1,20 @@
+
+<section class="card-anime">
+    <ng-container *ngIf="animes; else skeleton">
+        <app-card-anime *ngFor="let anime of animes | sortBy:'desc': sortBy | slice:0:4;trackBy: trackByFn" [anime]="anime"/>
+    </ng-container>
+</section>
+
+<ng-template #skeleton>
+    <div class="container-skeleton" *ngIf="!animes">
+        <ngx-skeleton-loader 
+        *ngFor="let number of [0,1,2,3]"
+        [theme]="{
+            width: '252px',
+            height: '350px',
+            'border-radius': '10px',
+            'margin': '0 auto 2rem auto'
+        }"
+        />
+    </div>
+</ng-template>

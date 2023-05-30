@@ -1,0 +1,79 @@
+@import "../../../../../themes/app.scss";
+
+.navbar {
+  overflow: hidden;
+  background-color: $background;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  box-shadow: 0 -1px 0 hsl(0deg 0% 50% / 0.2);
+
+  .container-icon {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: space-around;
+    list-style-type: none;
+    &__content {
+      a {
+        text-decoration: none;
+        color: $black;
+      }
+      p {
+        font-size: 11px;
+        margin: 0;
+      }
+      text-align: center;
+    }
+  }
+}
+
+.navbar-desk {
+  display: none;
+}
+
+.hide {
+  display: none;
+}
+
+@include respond-to('desktop') {
+  .navbar {
+    display: none;
+  }
+
+  .navbar-desk {
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 50px;
+    width: calc($max-width / 2);
+    background-color: $primary;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius:15px ;
+
+    img {
+      padding: 1rem;
+      width: auto;
+      height: 50px;
+    }
+
+    &__container {
+      display: flex;
+      flex-direction: row;
+      list-style-type: none;
+      align-items: center;
+      padding: 1rem;
+      a {
+        text-decoration: none;
+        color: $black;
+      }
+      li:not(:last-child) {
+        margin-right: 2rem;
+      }
+    }
+    
+  }
+}  

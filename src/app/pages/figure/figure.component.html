@@ -1,0 +1,19 @@
+<section class="figure">
+    <div class="container">
+        <app-presentation [presentation]="presentation" />
+        <app-title [libelle]="'Animes'" [color]="'back'" />
+        <div class="container-page container-page__grid">
+            <app-list-card-anime [animes]="animes" [sortBy]="'startDate'" />
+        </div>
+        <app-title [libelle]="'staff'" [color]="'back'" />
+    
+        <div class="container-page container-page__grid">
+            <app-card-character [character]="character" *ngFor="let character of staffs | slice:0:6; trackBy:trackByFn" />
+        </div>
+        <app-title *ngIf="posters" [libelle]="'affiches'" [color]="'back'" />
+    
+        <div class="container-page container-page__grid">
+            <app-poster *ngFor="let poster of posters | slice:0:4; trackBy:trackByFn" [poster]="poster" />
+        </div>
+    </div>
+</section>

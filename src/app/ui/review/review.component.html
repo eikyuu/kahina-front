@@ -1,0 +1,10 @@
+<div *ngIf="review" class="review">
+    <div class="review__rating-star">
+        <img *ngFor="let fullstars of getStarRating().fullStar; trackBy:trackByFn" src="assets/svg/star-fill.svg" alt="logo" class="logo" />
+        <img *ngFor="let halfstars of getStarRating().halfStar; trackBy:trackByFn" src="assets/svg/star-half.svg" alt="logo" class="logo" />
+        <img *ngFor="let emptystars of getStarRating().emptyStar; trackBy:trackByFn" src="assets/svg/star.svg" alt="logo" class="logo" />
+    </div>
+    <p>
+        {{ review.content }}
+    </p>
+</div>

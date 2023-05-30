@@ -1,0 +1,97 @@
+@import "../../themes/app.scss";
+
+h1,
+h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+
+.card-anime {
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+.card-article {
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+.card-character {
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-areas:
+    "one one"
+    "two two"
+    "three three"
+    "four four"
+    "five five";
+  gap: 1rem;
+  // grid-template-columns: 500px 0 repeat(4, auto);
+
+  &> app-card-article:not(:first-child) {
+    height: 250px;
+  }
+
+  .one {
+    grid-area: one;
+  }
+  
+  .two {
+    grid-area: two;
+  }
+  
+  .three {
+    grid-area: three;
+  }
+  
+  .four {
+    grid-area: four;
+  }
+  
+  .five {
+    grid-area: five;
+  }
+}
+
+
+@include respond-to("desktop") {
+  .card-anime {
+    &__container {
+      justify-content: space-between;
+    }
+  }
+
+  .card-article {
+    &__container {
+      justify-content: space-between;
+    }
+  }
+
+  .card-character {
+    &__container {
+      justify-content: space-between;
+    }
+  }
+
+  .grid {
+    grid-template-areas:
+      "one one two two three three"
+      "one one four four five five";
+    grid-template-columns: 500px 0 repeat(4, auto);
+  }
+
+}

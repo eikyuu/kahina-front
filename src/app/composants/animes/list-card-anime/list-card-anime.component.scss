@@ -1,0 +1,39 @@
+@import "../../../../themes/app.scss";
+
+.card-anime {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    .container-skeleton {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+  }
+  
+  app-card-anime:not(:last-child) {
+      margin-bottom: 2rem;
+  }
+  
+  @include respond-to("tablet") {
+  
+    .card-anime {
+      flex-direction: row;
+      flex-wrap: wrap;
+      width: 90vw;
+    }
+    app-card-anime:not(:nth-child(4n+0)) {
+      margin-right: 1rem;
+    }
+  }
+  
+  @include respond-to("desktop") {
+    app-card-anime:not(:last-child) {
+      margin-bottom: 0;
+  }
+    .card-anime {
+      width: $max-width;
+    }
+  }
+  

@@ -1,0 +1,98 @@
+import { Component, OnDestroy, OnInit, inject } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { PresentationComponent } from '../../composants/presentation/presentation.component';
+import { ActivatedRoute } from '@angular/router';
+import { AnimesService } from '../../@core/services/animes/animes.service';
+import { Subject, forkJoin, takeUntil } from 'rxjs';
+import { ScrollTopDirective } from '../../@core/directives/scroll-top.directive';
+import { TitleComponent } from '../../ui/title/title.component';
+import { ListCardAnimeComponent } from '../../composants/animes/list-card-anime/list-card-anime.component';
+import { CardCharacterComponent } from '../../ui/card-character/card-character.component';
+import { trackByFn } from '../../@core/utils/utils';
+import { PosterComponent } from '../../ui/poster/poster.component';
+import { Title } from '@angular/platform-browser';
+import * as _ from 'lodash';
+
+@Component({
+  selector: 'app-figure',
+  standalone: true,
+  imports: [
+    CommonModule,
+    PresentationComponent,
+    TitleComponent,
+    ListCardAnimeComponent,
+    CardCharacterComponent,
+    TitleComponent,
+    PosterComponent
+  ],
+  templateUrl: './figure.component.html',
+  styleUrls: ['./figure.component.scss'],
+})
+export class FigureComponent
+  extends ScrollTopDirective
+  implements OnInit, OnDestroy
+{
+
+  private titleService = inject(Title);
+  public trackByFn = trackByFn;
+  private route = inject(ActivatedRoute);
+  private animesService = inject(AnimesService);
+
+  ROUTER_PARAM_TYPE: 'figure' | 'staff ' = this.route.snapshot.params['type'];
+  ROUTER_PARAM_SLUG = this.route.snapshot.params['slug'];
+  PAGE_TITLE = `${_.capitalize(this.ROUTER_PARAM_TYPE)} - ${this.ROUTER_PARAM_SLUG}`;
+
+  private readonly ngUnsubscribe$ = new Subject<void>();
+
+  public presentation: any | undefined;
+  public animes: any;
+  public staffs: any;
+  public posters: any;
+
+  ngOnInit(): void {
+    this.titleService.setTitle(this.PAGE_TITLE);
+  
+    forkJoin([
+      this.animesService.getAnimesByCharacter(
+        this.ROUTER_PARAM_SLUG,
+        this.ROUTER_PARAM_TYPE
+      ),
+      this.animesService.getStaffByCharacter(
+        this.ROUTER_PARAM_SLUG,
+        this.ROUTER_PARAM_TYPE
+      ),
+      this.animesService.getCharacter(
+        this.ROUTER_PARAM_SLUG,
+        this.ROUTER_PARAM_TYPE
+      ),
+      this.animesService.getPosterByCharacter(
+        this.ROUTER_PARAM_SLUG,
+        this.ROUTER_PARAM_TYPE
+      ),
+    ])
+      .pipe(takeUntil(this.ngUnsubscribe$))
+      .subscribe(([animes, staff, character, posters]) => {
+        this.animes = animes;
+        this.staffs = staff;
+        this.posters = posters;
+        this.presentation = {
+          title:
+            this.ROUTER_PARAM_TYPE === 'figure'
+              ? character.name.english
+              : character.firstname + ' ' + character.lastname,
+          synopsis:
+            this.ROUTER_PARAM_TYPE === 'figure'
+              ? character.description
+              : character.biography,
+          upVoteCount: 0,
+          image: character.image,
+        };
+        this.checkScroll();
+      });
+  }
+
+  ngOnDestroy(): void {
+    this.ngUnsubscribe$.next();
+    this.ngUnsubscribe$.complete();
+  }
+}

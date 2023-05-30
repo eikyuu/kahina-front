@@ -1,0 +1,15 @@
+<section class="container-animes">
+    <div class="container">
+        <app-title [libelle]="'anime récent'" [color]="'#202020'" />
+    
+        <app-list-card-anime [animes]="animes" [sortBy]="'startDate'" />
+    
+        <app-title [libelle]="'anime populaire'" [color]="'#202020'" />
+    
+        <app-list-card-anime [animes]="animes" [sortBy]="'popularityRank'" />
+    
+        <app-title [libelle]="'meilleurs note'" [color]="'#202020'" />
+    
+        <app-list-card-anime [animes]="animes" [sortBy]="'score'" />
+    </div>
+</section>

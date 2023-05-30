@@ -1,0 +1,116 @@
+
+<section class="container-anime">
+    <div class="container">
+        <ng-container appScrollManager *ngIf="anime; else skeleton">
+            <app-presentation [presentation]="presentation"/>
+        
+            <app-information [anime]="anime"/>
+        
+            <app-title appScrollSection="bande-annonce" libelle="bande-annonce"/>
+        
+            <div class="video">
+                <iframe height="315" [src]="videoUrl | safe" title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        
+            <div class="block-title">
+                <app-title appScrollSection="avis" libelle="avis des kahinautes" color="'#202020'"/>
+                <a [routerLink]="['/reviews', ROUTER_PARAM_SLUG]" >
+                    voir plus
+                </a>
+            </div>
+            
+            <div class="container-page">
+                <app-review [review]="review" *ngFor="let review of anime.avis | slice:0:4; trackBy:trackByFn"/>
+            </div>
+        
+            <div class="block-title">
+                <app-title appScrollSection="personnages" libelle="personnages" color="'#202020'"/>
+                <a [routerLink]="['/characters' + '/figure', ROUTER_PARAM_SLUG]" >
+                    voir plus
+                </a>
+            </div>
+        
+            <div class="container-page container-page__grid">
+                <app-card-character [character]="character" *ngFor="let character of anime.figure | slice:0:8; trackBy:trackByFn"/>
+            </div>
+        
+            <div class="block-title">
+                <app-title appScrollSection="staffs" libelle="staffs" color="'#202020'"/>
+                <a [routerLink]="['/characters' + '/staff', ROUTER_PARAM_SLUG]" >
+                    voir plus
+                </a>
+            </div>
+        
+            <div class="container-page container-page__grid">
+                <app-card-character [character]="character" *ngFor="let character of anime.staff | slice:0:8; trackBy:trackByFn"/>
+            </div>
+        
+            <div class="block-title">
+                <app-title appScrollSection="relations" libelle="relations" color="'#202020'"/>
+                <a [routerLink]="['/relations', ROUTER_PARAM_SLUG]" >
+                    voir plus
+                </a>
+            </div>
+            <div class="container-page container-page__relationship">
+                <app-relationship *ngFor="let relation of anime.relationship | slice:0:6; trackBy:trackByFn" [relationship]="relation"/>
+            </div>
+        
+        
+            <div class="block-title">
+                <app-title appScrollSection="themes" libelle="themes" color="'#202020'"/>
+                <a [routerLink]="['/themes', ROUTER_PARAM_SLUG]" >
+                    voir plus
+                </a>
+            </div>
+            <div class="container-page theme">
+                <app-theme *ngFor="let theme of anime.theme | slice:0:4; trackBy:trackByFn" [theme]="theme"/>
+            </div>
+        
+            <div class="block-title">
+                <app-title appScrollSection="affiches" libelle="affiches" color="'#202020'"/>
+                <a [routerLink]="['/posters', ROUTER_PARAM_SLUG]" >
+                    voir plus
+                </a>
+            </div>
+            <div class="container-page container-page__grid">
+                <app-poster *ngFor="let poster of anime.posterImage | slice:0:4; trackBy:trackByFn" [poster]="poster"/>
+            </div>
+            
+        </ng-container>
+        
+        <ng-template #skeleton>
+            <ngx-skeleton-loader
+              [theme]="{
+                width: '100%',
+                height: '550px',
+                'border-radius': '10px',
+                margin: '2rem auto 2rem auto'
+              }"
+            />
+        
+            <ngx-skeleton-loader
+            [theme]="{
+              width: '100%',
+              height: '350px',
+              'border-radius': '10px',
+              margin: '2rem auto 2rem auto'
+            }"
+            />
+        
+          <ngx-skeleton-loader
+          [theme]="{
+            width: '100%',
+            height: '550px',
+            'border-radius': '10px',
+            margin: '2rem auto 2rem auto'
+          }"
+          />
+        
+        </ng-template>
+    </div>
+</section>
+

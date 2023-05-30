@@ -1,0 +1,23 @@
+<!-- TODO : link to the article -->
+<a href="/" [ngClass]="{'card-article--one' : one}" class="card-article">
+    <img [ngClass]="{'card-article__image--one' : one}" class="card-article__image" [src]="article.image" [alt]="article.title" />
+    <h3 class="card-article__title">{{ article.title }}</h3>
+    <ul class="card-article__list">
+        <li class="card-article__list-item">
+            <img class="card-article__logo" src="assets/svg/comments.svg" alt="comments icon" />
+            100
+        </li>
+        <li class="card-article__list-item">
+            <img class="card-article__logo" src="assets/svg/upvote.svg" alt="upvoteicon icon" />
+            250
+        </li>
+        <li class="card-article__list-item">
+            <img class="card-article__logo" src="assets/svg/loop.svg" alt="loop icon" />
+            1
+        </li>
+        <li class="card-article__list-item">
+            <img class="card-article__logo" src="assets/svg/share.svg" alt="share icon" />
+            1M
+        </li>
+    </ul>
+</a>

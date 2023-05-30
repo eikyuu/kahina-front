@@ -1,0 +1,8 @@
+<div class="posters">
+    <div class="container">
+        <app-title [libelle]="'Tous les posters de ' + ROUTER_PARAM_SLUG.replace('-', ' ')" [color]="'#202020'" />
+        <div class="container-page container-page__grid">
+            <app-poster *ngFor="let poster of posters; trackBy:trackByFn" [poster]="poster"/>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,66 @@
+@import './breakpoints';
+@import './margin';
+@import './colors';
+@import './fonts';
+@import './mixins';
+@import './normalize';
+@import './variables';
+
+
+main {
+  .container {
+    max-width: $max-width;
+    margin: 0 auto;
+  }
+}
+
+.container-white {
+  margin: 0 auto;
+  background-color: $white;
+  border-radius: 10px;
+  width: 90vw;
+  height: auto;
+  padding: 20px;
+
+  &--border {
+    border-radius: 10px 10px 0 0;
+    border-bottom: solid 4px $primary;
+  }
+}
+
+.scrool {
+  display: none;
+}
+
+@include respond-to("tablet") {
+  .container-white {
+    width: 100%;
+  }
+
+  .scrool {
+    display: block;
+    position: fixed;
+    cursor: pointer;
+    right: 50px;
+    bottom: 100px;
+    z-index: 100;
+    border-radius: 50%;
+    border: none;
+    width: 40px;
+    height: 40px;
+    background-color: rgb(235, 235, 235);
+    opacity: 0.7;
+
+    &:hover {
+      background-color: $primary;
+      opacity: 1;
+    }
+  }
+}
+
+@include respond-to("desktop") {
+  body {
+    //background: linear-gradient(180deg, $black 45%, $primary 45%);
+    //background: $primary;
+  }
+}

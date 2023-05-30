@@ -1,0 +1,54 @@
+<section class="container-articles">
+  <div class="container">
+    <div *ngIf="articles">
+      <app-title [libelle]="'articles recent'"/>
+      <section class="articles">
+        <app-card-article
+          class="one"
+          [article]="articles[0]"
+          [one]="true"
+        />
+        <app-card-article class="two" [article]="articles[1]"/>
+        <app-card-article class="three" [article]="articles[2]"/>
+        <app-card-article class="four" [article]="articles[3]"/>
+        <app-card-article class="five" [article]="articles[4]"/>
+      </section>
+    </div>
+    
+    <div *ngIf="!articles" class="articles__skeleton">
+      <ngx-skeleton-loader
+        *ngFor="let number of [0, 1, 2, 3, 4]"
+        [theme]="{
+          width: '252px',
+          height: '350px',
+          'border-radius': '10px',
+          margin: '0 auto 2rem auto'
+        }"
+      />
+    </div>
+    
+    <div *ngIf="articles">
+      <app-title [libelle]="'articles les plus commentés'"/>
+      <section class="articles-commented">
+        <app-card-article class="one" [article]="articles[0]"/>
+        <app-card-article class="two" [article]="articles[1]"/>
+        <app-card-article class="three" [article]="articles[2]"/>
+        <app-card-article class="four" [article]="articles[3]"/>
+        <app-card-article class="five" [article]="articles[4]"/>
+        <app-card-article class="five" [article]="articles[4]"/>
+      </section>
+    </div>
+    
+    <div *ngIf="!articles" class="articles__skeleton">
+      <ngx-skeleton-loader
+        *ngFor="let number of [0, 1, 2, 3, 4]"
+        [theme]="{
+          width: '252px',
+          height: '350px',
+          'border-radius': '10px',
+          margin: '0 auto 2rem auto'
+        }"
+      />
+    </div>
+  </div>
+</section>

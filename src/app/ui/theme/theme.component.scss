@@ -1,0 +1,46 @@
+@import "../../../themes/app.scss";
+
+.theme {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    position: relative; 
+    width: 90vw;
+    height: 180px;
+    border-radius: 10px;
+    overflow: hidden;
+    text-decoration: none;
+    @include effect-hover;
+    &__img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: 0 50%;
+        filter: brightness(0.5);
+    }
+    &__title {
+        z-index: 1;
+        color:$white;
+        font-weight: 600;
+    }
+    //two first themes
+    &:nth-child(-n+2) {
+       margin-bottom: 2rem;
+    }
+}
+
+@include respond-to("tablet") {
+    .theme {
+        width: calc(90vw / 2 - 1rem);
+    }
+  }
+
+@include respond-to("desktop") {
+    .theme {
+        width: calc($max-width / 2 - 1rem);
+    }
+  }
+  
+  

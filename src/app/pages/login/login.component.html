@@ -1,0 +1,26 @@
+<div class="login">
+    <form [formGroup]="loginForm" (ngSubmit)="submit()" class="login__ctn">
+        <div class="login__ctn__input">
+            <label for="email">
+                <div *ngIf="submitted && form?.['email']?.errors?.['required']">
+                    <span>Email requis</span>
+                </div>
+                <div *ngIf="submitted && form?.['email']?.errors?.['email']">
+                    <span>Email invalide</span>
+                </div>  
+            </label>
+            <input type="email" id="email" placeholder="Email" class="input" formControlName="email" required />
+        </div>
+        <div class="login__ctn__input">
+            <label for="password">
+                <div *ngIf="submitted && form?.['password']?.errors?.['required']">
+                    <span>Mot de passe requis</span>
+                </div>
+            </label>
+            <input type="password" id="password" placeholder="Mot de passe" class="input" formControlName="password" required />
+        </div>
+        <div class="login__ctn__btn">
+            <app-button [type]="'submit'" [libelle]="'Se connecter'"></app-button>
+        </div>
+    </form>
+</div>
