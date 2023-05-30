@@ -5,6 +5,7 @@
   background: linear-gradient(180deg, $black 45%, $primary 45%);
   width: 100%;
   height: 100%;
+  padding-bottom: 2rem;
 }
   .block-title {
     a {
@@ -109,7 +110,7 @@
   align-items: center;
   margin: 0 auto;
 
-  app-review:not(:last-child), app-relationship:not(:last-child), app-card-character:not(:last-child), app-poster:not(:last-child) {
+  app-review:not(:last-child), app-relationship:not(:last-child), app-card-character:not(:last-child) {
     margin-bottom: 1rem;
   }
 }

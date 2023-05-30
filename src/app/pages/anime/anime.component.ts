@@ -27,6 +27,7 @@ import { trackByFn } from '../../@core/utils/utils';
 import { Subject, switchMap, takeUntil } from 'rxjs';
 import { Title } from '@angular/platform-browser';
 import * as _ from 'lodash';
+import { PageDirective } from '../../@core/directives/page.directive';
 
 
 @Component({
@@ -59,17 +60,11 @@ import * as _ from 'lodash';
   templateUrl: './anime.component.html',
   styleUrls: ['./anime.component.scss'],
 })
-export class AnimeComponent extends ScrollTopDirective implements OnInit, OnDestroy {
-  private readonly ngUnsubscribe$ = new Subject<void>();
+export class AnimeComponent extends PageDirective implements OnInit, OnDestroy {
   
   public anime: any;
   public presentation: any;
   public videoUrl: string | undefined;
-  public trackByFn = trackByFn;
-
-  private readonly animesService = inject(AnimesService);
-  private readonly route = inject(ActivatedRoute);
-  private titleService = inject(Title);
 
   constructor() {
     super();
@@ -101,15 +96,8 @@ export class AnimeComponent extends ScrollTopDirective implements OnInit, OnDest
           },
           image: this.anime?.posterImage
         };
-        this.checkScroll();
       }
     );
-
-  }
-
-  ngOnDestroy(): void {
-    this.ngUnsubscribe$.next();
-    this.ngUnsubscribe$.complete();
   }
 
 }

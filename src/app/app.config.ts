@@ -14,7 +14,7 @@ const APP_ROUTES: Route[] = [
 export const appConfig : ApplicationConfig = {
     providers: [
       importProvidersFrom(HttpClientModule),
-      importProvidersFrom(RouterModule.forRoot(APP_ROUTES)),
+      importProvidersFrom(RouterModule.forRoot(APP_ROUTES, { useHash: true, scrollPositionRestoration: 'top'  })),
       { provide: HTTP_INTERCEPTORS, useClass: BearerInterceptor, multi: true },
     ]
   }

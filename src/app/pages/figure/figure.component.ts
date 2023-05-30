@@ -87,7 +87,6 @@ export class FigureComponent
           upVoteCount: 0,
           image: character.image,
         };
-        this.checkScroll();
       });
   }
 
