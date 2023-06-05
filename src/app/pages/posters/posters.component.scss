@@ -9,8 +9,8 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
-        app-poster {
-            margin-bottom: 1rem;
+        app-poster:not(:nth-last-child(-n+4)) {
+            margin-bottom: 2rem;
         }
     }
 }

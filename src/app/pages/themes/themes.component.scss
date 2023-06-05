@@ -9,8 +9,8 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
-        app-card-character {
-            margin-bottom: 1rem;
+        app-theme:not(:nth-last-child(-n+2)) {
+            margin-bottom: 2rem;
         }
     }
 }

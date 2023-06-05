@@ -835,6 +835,66 @@ export const ANIMES = [
                 "@id": "/api/.well-known/genid/ead519615810b14fa86a",
                 "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sapien mi, bibendum at tellus eget, blandit consequat ante. Maecenas vel dignissim ex. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed accumsan varius mi, sit amet vestibulum massa mollis eu.",
                 "note": 4
+            },
+            {
+                "@type": "Notice",
+                "@id": "/api/.well-known/genid/ead519615810b14fa86a",
+                "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sapien mi, bibendum at tellus eget, blandit consequat ante. Maecenas vel dignissim ex. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed accumsan varius mi, sit amet vestibulum massa mollis eu.",
+                "note": 3.3
+            },
+            {
+                "@type": "Notice",
+                "@id": "/api/.well-known/genid/ead519615810b14fa86a",
+                "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sapien mi, bibendum at tellus eget, blandit consequat ante. Maecenas vel dignissim ex. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed accumsan varius mi, sit amet vestibulum massa mollis eu.",
+                "note": 4
+            },
+            {
+                "@type": "Notice",
+                "@id": "/api/.well-known/genid/ead519615810b14fa86a",
+                "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sapien mi, bibendum at tellus eget, blandit consequat ante. Maecenas vel dignissim ex. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed accumsan varius mi, sit amet vestibulum massa mollis eu.",
+                "note": 4
+            },
+            {
+                "@type": "Notice",
+                "@id": "/api/.well-known/genid/ead519615810b14fa86a",
+                "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sapien mi, bibendum at tellus eget, blandit consequat ante. Maecenas vel dignissim ex. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed accumsan varius mi, sit amet vestibulum massa mollis eu.",
+                "note": 4
+            },
+            {
+                "@type": "Notice",
+                "@id": "/api/.well-known/genid/ead519615810b14fa86a",
+                "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sapien mi, bibendum at tellus eget, blandit consequat ante. Maecenas vel dignissim ex. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed accumsan varius mi, sit amet vestibulum massa mollis eu.",
+                "note": 4
+            },
+            {
+                "@type": "Notice",
+                "@id": "/api/.well-known/genid/ead519615810b14fa86a",
+                "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sapien mi, bibendum at tellus eget, blandit consequat ante. Maecenas vel dignissim ex. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed accumsan varius mi, sit amet vestibulum massa mollis eu.",
+                "note": 3.3
+            },
+            {
+                "@type": "Notice",
+                "@id": "/api/.well-known/genid/ead519615810b14fa86a",
+                "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sapien mi, bibendum at tellus eget, blandit consequat ante. Maecenas vel dignissim ex. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed accumsan varius mi, sit amet vestibulum massa mollis eu.",
+                "note": 4
+            },
+            {
+                "@type": "Notice",
+                "@id": "/api/.well-known/genid/ead519615810b14fa86a",
+                "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sapien mi, bibendum at tellus eget, blandit consequat ante. Maecenas vel dignissim ex. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed accumsan varius mi, sit amet vestibulum massa mollis eu.",
+                "note": 4
+            },
+            {
+                "@type": "Notice",
+                "@id": "/api/.well-known/genid/ead519615810b14fa86a",
+                "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sapien mi, bibendum at tellus eget, blandit consequat ante. Maecenas vel dignissim ex. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed accumsan varius mi, sit amet vestibulum massa mollis eu.",
+                "note": 4
+            },
+            {
+                "@type": "Notice",
+                "@id": "/api/.well-known/genid/ead519615810b14fa86a",
+                "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sapien mi, bibendum at tellus eget, blandit consequat ante. Maecenas vel dignissim ex. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed accumsan varius mi, sit amet vestibulum massa mollis eu.",
+                "note": 4
             }
         ],
         "posterImage": [
