@@ -1,11 +1,11 @@
 <div class="login">
-    <form [formGroup]="loginForm" (ngSubmit)="submit()" class="login__ctn">
+    <form [formGroup]="login.loginForm" (ngSubmit)="login.submit()" class="login__ctn">
         <div class="login__ctn__input">
             <label for="email">
-                <div *ngIf="submitted && form?.['email']?.errors?.['required']">
+                <div *ngIf="login.submitted && login.form?.['email']?.errors?.['required']">
                     <span>Email requis</span>
                 </div>
-                <div *ngIf="submitted && form?.['email']?.errors?.['email']">
+                <div *ngIf="login.submitted && login.form?.['email']?.errors?.['email']">
                     <span>Email invalide</span>
                 </div>  
             </label>
@@ -13,7 +13,7 @@
         </div>
         <div class="login__ctn__input">
             <label for="password">
-                <div *ngIf="submitted && form?.['password']?.errors?.['required']">
+                <div *ngIf="login.submitted && login.form?.['password']?.errors?.['required']">
                     <span>Mot de passe requis</span>
                 </div>
             </label>

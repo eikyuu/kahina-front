@@ -11,3 +11,11 @@
     transform: scale(1.05);
   }
 }
+
+@mixin inline-block($color) {
+  display: inline-block;
+  background: $color;
+  width: 100%;
+  height: 100%;
+  padding-bottom: 2rem;
+}
