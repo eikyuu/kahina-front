@@ -110,11 +110,11 @@
   align-items: center;
   margin: 0 auto;
 
-  app-review:not(:last-child),
-  app-relationship:not(:last-child),
-  app-card-character:not(:last-child),
-  app-theme:not(:last-child),
-  app-poster:not(:last-child) {
+  app-review,
+  app-relationship,
+  app-card-character,
+  app-theme,
+  app-poster {
     margin-bottom: 1rem;
   }
 }
@@ -213,8 +213,12 @@
       margin-left: 1.33rem;
     }
 
-    app-review {
-      margin-bottom: 0 !important;
+    app-review,
+    app-relationship,
+    app-card-character,
+    app-theme,
+    app-poster {
+      margin-bottom: 0;
     }
 
   }
