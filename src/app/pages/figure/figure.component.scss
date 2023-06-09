@@ -16,9 +16,7 @@
       margin-bottom: 1rem;
     }
   }
-
 }
-
 
 @include respond-to("tablet") {
 
@@ -32,15 +30,17 @@
 }
 
 @include respond-to("desktop") {
-  .container-page {
-    width: 100%;
-    justify-content: start;
+  .figure {
+    .container-page {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 100%;
 
-    &__grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      grid-column-gap: 1.33rem;
-      grid-row-gap: 1.33rem;
+        app-card-character {
+            margin-bottom: 1rem;
+        }
     }
-  }
+}
 }
