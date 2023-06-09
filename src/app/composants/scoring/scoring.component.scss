@@ -4,11 +4,12 @@
     display: flex;
     height: auto;
     width: 100%;
+    margin-bottom: 1rem;
     &__score {
         margin: 1rem 0 0 0;
         font-weight: 600;
         font-size: 24px;
-        color: $white;
+        color: $black;
     }
         &__stats {
         display: flex;
@@ -16,7 +17,7 @@
         margin: 0 0 0 .5rem;
         > p {
             padding: .5rem 0 0 0;
-            color: $white;
+            color: $black;
         }
     }
 }
@@ -24,12 +25,16 @@
 @include respond-to("tablet") {
     .scoring {
         flex-direction: column;
+        &__score {
+            color: $white;
+        }
         &__stats {
             display: flex;
             flex-direction: row;
             margin: 0;
             > p {
                 padding: 1rem 1rem 0 0;
+                color: $white;
             }
         }
     }

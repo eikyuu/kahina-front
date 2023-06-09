@@ -1,7 +1,8 @@
 @import "../../../themes/app.scss";
 
 .container-anime {
-  @include inline-block(linear-gradient(180deg, $black 45%, $primary 45%));
+  @include inline-block(linear-gradient(180deg, $black 25%, $primary 25%));
+  text-align: center;
 }
 
 .block-title {
@@ -111,7 +112,9 @@
 
   app-review:not(:last-child),
   app-relationship:not(:last-child),
-  app-card-character:not(:last-child) {
+  app-card-character:not(:last-child),
+  app-theme:not(:last-child),
+  app-poster:not(:last-child) {
     margin-bottom: 1rem;
   }
 }
@@ -183,6 +186,9 @@
 }
 
 @include respond-to("desktop") {
+  .container-anime {
+    text-align: left;
+  }
   .container-page {
     width: 100%;
     justify-content: start;

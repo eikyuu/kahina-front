@@ -2,15 +2,26 @@
 
 .figures {
     @include inline-block($primary);
+    .container-page {
+        display: flex; 
+        flex-direction: column;
+        align-items: center;
+        & app-card-character  {
+            margin-bottom: 1rem;
+        }
+   }
 }
 
 @include respond-to("desktop") {
-    .container-page {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        app-card-character {
-            margin-bottom: 1rem;
+    .figures {
+        .container-page {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            app-card-character {
+                margin-bottom: 1rem;
+            }
         }
     }
 }

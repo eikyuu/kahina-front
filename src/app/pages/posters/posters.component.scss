@@ -2,15 +2,27 @@
 
 .posters {
     @include inline-block($primary);
+    .container-page {
+        display: flex; 
+        flex-direction: column;
+        align-items: center;
+        & app-poster {
+            margin-bottom: 1rem;
+        }
+   }
 }
 
 @include respond-to("desktop") {
-    .container-page {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        app-poster {
-            margin-bottom: 2rem;
+    .posters {
+        .container-page {
+            flex-direction: row;
+            flex-wrap: wrap;
+            width: 100%;
+            justify-content: start;
+
+            app-poster:not(:nth-child(4n+1)) {
+                margin-left: 1.33rem;
+              }
         }
     }
 }

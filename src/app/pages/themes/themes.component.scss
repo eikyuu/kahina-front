@@ -2,15 +2,23 @@
 
 .themes {
     @include inline-block($primary);
+        .container-page {
+         display: flex; 
+         flex-direction: column;
+         align-items: center;
+         & app-theme {
+             margin-bottom: 1rem;
+         }
+    }
 }
 
 @include respond-to("desktop") {
-    .container-page {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        app-theme {
-            margin-bottom: 2rem;
+    .themes {
+        .container-page {
+            flex-direction: row;
+            flex-wrap: wrap;
+            width: 100%;
+            justify-content: start;
         }
     }
 }
