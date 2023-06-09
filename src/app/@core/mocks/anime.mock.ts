@@ -756,7 +756,15 @@ export const ANIMES = [
             "@type": "License",
             "@id": "/api/.well-known/genid/d9e54d3e586de81298b0",
             "name": "string",
-            "website": "string"
+            "website": "string",
+            "slug": "string",
+            "licenseImage": [
+                {
+                    "@id": "/api/create-license-image-items/1",
+                    "@type": "create-license-image-item",
+                    "name": "4423178-6457e6459f37c240954162.jpeg"
+                },
+            ],
         },
 
         //TODO : utiliter ?
@@ -1124,7 +1132,15 @@ export const ANIMES = [
                     "@type": "License",
                     "@id": "/api/.well-known/genid/2e13f8aac78ecb91dc59",
                     "name": "string",
-                    "website": "string"
+                    "website": "string",
+                    "slug": "string",
+                    "licenseImage": [
+                        {
+                            "@id": "/api/create-license-image-items/1",
+                            "@type": "create-license-image-item",
+                            "name": "4423178-6457e6459f37c240954162.jpeg"
+                        },
+                    ],
                 },
                 "theme": [
                     {
@@ -1309,7 +1325,15 @@ export const ANIMES = [
                     "@type": "License",
                     "@id": "/api/.well-known/genid/2e13f8aac78ecb91dc59",
                     "name": "string",
-                    "website": "string"
+                    "website": "string",
+                    "slug": "string",
+                    "licenseImage": [
+                        {
+                            "@id": "/api/create-license-image-items/1",
+                            "@type": "create-license-image-item",
+                            "name": "4423178-6457e6459f37c240954162.jpeg"
+                        },
+                    ],
                 },
                 "theme": [
                     {
@@ -1494,7 +1518,15 @@ export const ANIMES = [
                     "@type": "License",
                     "@id": "/api/.well-known/genid/2e13f8aac78ecb91dc59",
                     "name": "string",
-                    "website": "string"
+                    "website": "string",
+                    "slug": "string",
+                    "licenseImage": [
+                        {
+                            "@id": "/api/create-license-image-items/1",
+                            "@type": "create-license-image-item",
+                            "name": "4423178-6457e6459f37c240954162.jpeg"
+                        },
+                    ],
                 },
                 "theme": [
                     {
@@ -1679,7 +1711,16 @@ export const ANIMES = [
                     "@type": "License",
                     "@id": "/api/.well-known/genid/2e13f8aac78ecb91dc59",
                     "name": "string",
-                    "website": "string"
+                    "website": "string",
+                    "slug": "string",
+                    "licenseImage": [
+                        {
+                            "@id": "/api/create-license-image-items/1",
+                            "@type": "create-license-image-item",
+                            "name": "4423178-6457e6459f37c240954162.jpeg"
+                        },
+                    ],
+                    
                 },
                 "theme": [
                     {
@@ -1864,7 +1905,15 @@ export const ANIMES = [
                     "@type": "License",
                     "@id": "/api/.well-known/genid/2e13f8aac78ecb91dc59",
                     "name": "string",
-                    "website": "string"
+                    "website": "string",
+                    "slug": "string",
+                    "licenseImage": [
+                        {
+                            "@id": "/api/create-license-image-items/1",
+                            "@type": "create-license-image-item",
+                            "name": "4423178-6457e6459f37c240954162.jpeg"
+                        },
+                    ],
                 },
                 "theme": [
                     {
@@ -2049,7 +2098,15 @@ export const ANIMES = [
                     "@type": "License",
                     "@id": "/api/.well-known/genid/2e13f8aac78ecb91dc59",
                     "name": "string",
-                    "website": "string"
+                    "website": "string",
+                    "slug": "string",
+                    "licenseImage": [
+                        {
+                            "@id": "/api/create-license-image-items/1",
+                            "@type": "create-license-image-item",
+                            "name": "4423178-6457e6459f37c240954162.jpeg"
+                        },
+                    ],
                 },
                 "theme": [
                     {
@@ -2234,7 +2291,15 @@ export const ANIMES = [
                     "@type": "License",
                     "@id": "/api/.well-known/genid/2e13f8aac78ecb91dc59",
                     "name": "string",
-                    "website": "string"
+                    "website": "string",
+                    "slug": "string",
+                    "licenseImage": [
+                        {
+                            "@id": "/api/create-license-image-items/1",
+                            "@type": "create-license-image-item",
+                            "name": "4423178-6457e6459f37c240954162.jpeg"
+                        },
+                    ],
                 },
                 "theme": [
                     {
