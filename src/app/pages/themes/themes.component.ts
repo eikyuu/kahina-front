@@ -4,11 +4,12 @@ import { ThemeComponent } from '../../ui/theme/theme.component';
 import { PageDirective } from '../../@core/directives/page.directive';
 import * as _ from 'lodash';
 import { TitleComponent } from '../../ui/title/title.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @Component({
   selector: 'app-themes',
   standalone: true,
-  imports: [CommonModule, ThemeComponent, TitleComponent],
+  imports: [CommonModule, ThemeComponent, TitleComponent, NgxPaginationModule],
   templateUrl: './themes.component.html',
   styleUrls: ['./themes.component.scss']
 })
@@ -17,6 +18,8 @@ export class ThemesComponent extends PageDirective implements OnInit {
   public themes: any;
   ROUTER_PARAM_SLUG = this.route.snapshot.params['slug'];
   PAGE_TITLE = `Kahina - Themes - ${_.capitalize(this.ROUTER_PARAM_SLUG.replace('-', ' '))}`
+
+  currentPage = 1;
 
   ngOnInit(): void {
     this.titleService.setTitle(this.PAGE_TITLE);

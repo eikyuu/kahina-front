@@ -4,5 +4,17 @@
         <div class="container-page container-page__grid">
             <app-relationship *ngFor="let relation of relations; trackBy:trackByFn" [relationship]="relation"/>
         </div>
+        <pagination-controls
+        class="my-pagination"  
+        (pageChange)="currentPage = $event"
+        [directionLinks]="true"
+        [autoHide]="true"
+        previousLabel="Précédent"
+        nextLabel="Suivant"
+        screenReaderPaginationLabel="Pagination"
+        screenReaderPageLabel="page"
+        screenReaderCurrentLabel="You're on page"
+      >
+        ></pagination-controls>
     </div>
 </div>

@@ -4,7 +4,20 @@
         <app-title [libelle]="ROUTER_PARAM_SLUG" [color]="'#202020'" />
         <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.
         <div class="container-page container-page__grid">
-            <app-relationship *ngFor="let relation of animes; trackBy:trackByFn" [relationship]="relation"/>
+            <app-relationship *ngFor="let relation of animes | paginate : { itemsPerPage: 12, currentPage: currentPage }; trackBy:trackByFn" [relationship]="relation"/>
         </div>
+        <pagination-controls
+        class="my-pagination"  
+        (pageChange)="currentPage = $event"
+        [directionLinks]="true"
+        [autoHide]="true"
+        previousLabel="Précédent"
+        nextLabel="Suivant"
+        screenReaderPaginationLabel="Pagination"
+        screenReaderPageLabel="page"
+        screenReaderCurrentLabel="You're on page"
+      >
+        ></pagination-controls
+      >
     </div>
 </div>

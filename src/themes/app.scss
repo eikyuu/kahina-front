@@ -57,6 +57,33 @@ main {
   }
 }
 
+.my-pagination {
+  ::ng-deep .ngx-pagination {
+      margin-bottom: 0;
+      .current {
+          background: $white;
+          color: $primary;
+      }
+      .pagination-previous {
+          &.disabled {
+              background: $primary;
+              color: $black;
+          }
+      }
+      .pagination-next {
+          &.disabled {
+              background: $primary;
+              color: $black;
+          }
+      }
+      a:hover {
+          background: $primary;
+          color: $black;
+      }
+  }
+}
+
+
 @include respond-to("desktop") {
   body {
     //background: linear-gradient(180deg, $black 45%, $primary 45%);

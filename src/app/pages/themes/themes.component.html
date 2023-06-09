@@ -2,7 +2,19 @@
     <div class="container">
         <app-title [libelle]="'Tous les themes de ' + ROUTER_PARAM_SLUG.replace('-', ' ')" [color]="'#202020'" />
         <div class="container-page container-page__grid">
-            <app-theme *ngFor="let theme of themes; trackBy:trackByFn" [theme]="theme"/>
+            <app-theme *ngFor="let theme of themes | paginate : { itemsPerPage: 12, currentPage: currentPage }; trackBy:trackByFn" [theme]="theme"/>
         </div>
+        <pagination-controls
+        class="my-pagination"  
+        (pageChange)="currentPage = $event"
+        [directionLinks]="true"
+        [autoHide]="true"
+        previousLabel="Précédent"
+        nextLabel="Suivant"
+        screenReaderPaginationLabel="Pagination"
+        screenReaderPageLabel="page"
+        screenReaderCurrentLabel="You're on page"
+      >
+        ></pagination-controls>
     </div>
 </div>

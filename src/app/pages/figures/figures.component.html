@@ -2,7 +2,20 @@
     <div class="container">
         <app-title [libelle]="'Tous les membres de ' + ROUTER_PARAM_SLUG.replace('-', ' ')" [color]="'#202020'" />
         <div class="container-page container-page__grid">
-            <app-card-character [character]="character" *ngFor="let character of figures; trackBy:trackByFn" />
+            <app-card-character [character]="character" *ngFor="let character of figures | paginate : { itemsPerPage: 12, currentPage: currentPage }; trackBy:trackByFn" />
         </div>
+        <pagination-controls
+        class="my-pagination"  
+        (pageChange)="currentPage = $event"
+        [directionLinks]="true"
+        [autoHide]="true"
+        previousLabel="Précédent"
+        nextLabel="Suivant"
+        screenReaderPaginationLabel="Pagination"
+        screenReaderPageLabel="page"
+        screenReaderCurrentLabel="You're on page"
+      >
+        ></pagination-controls
+      >
     </div>
 </div>

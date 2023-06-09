@@ -6,11 +6,12 @@ import { TitleComponent } from '../../ui/title/title.component';
 import { PageDirective } from '../../@core/directives/page.directive';
 import * as _ from 'lodash';
 import { takeUntil } from 'rxjs';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @Component({
   selector: 'app-relations',
   standalone: true,
-  imports: [CommonModule, ListCardAnimeComponent, RelationshipComponent, TitleComponent],
+  imports: [CommonModule, ListCardAnimeComponent, RelationshipComponent, TitleComponent, NgxPaginationModule],
   templateUrl: './relations.component.html',
   styleUrls: ['./relations.component.scss']
 })
@@ -19,6 +20,8 @@ export class RelationsComponent extends PageDirective implements OnInit {
   public relations: any;
   ROUTER_PARAM_SLUG = this.route.snapshot.params['slug'];
   PAGE_TITLE = `Kahina - Relations - ${_.capitalize(this.ROUTER_PARAM_SLUG.replace('-', ' '))}`
+
+  currentPage = 1;
 
   ngOnInit(): void {
     this.titleService.setTitle(this.PAGE_TITLE);

@@ -55,6 +55,7 @@
                     voir plus
                 </a>
             </div>
+            
             <div class="container-page container-page__relationship">
                 <app-relationship *ngFor="let relation of anime.relationship | slice:0:6; trackBy:trackByFn" [relationship]="relation"/>
             </div>

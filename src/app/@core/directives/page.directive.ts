@@ -1,4 +1,4 @@
-import { Directive, OnDestroy, OnInit, inject } from '@angular/core';
+import { Directive, OnDestroy, inject } from '@angular/core';
 import { Subject } from 'rxjs';
 import { AnimesService } from '../services/animes/animes.service';
 import { ActivatedRoute } from '@angular/router';

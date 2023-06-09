@@ -9,7 +9,7 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
-        app-theme:not(:nth-last-child(-n+2)) {
+        app-theme {
             margin-bottom: 2rem;
         }
     }
