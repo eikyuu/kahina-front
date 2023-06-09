@@ -34,7 +34,7 @@ export class InformationComponent {
   }
 
   public formatImageURL(url: string): void {
-    this.imageUrl = environment.useMock ? `assets/placeholder.png` : `${environment.baseUrl}uploads/images/license_images/${url}`;
+    this.imageUrl = environment.useMock ? `assets/placeholder.webp` : `${environment.baseUrl}uploads/images/license_images/${url}`;
   }
 
   public trackByFn = trackByFn;

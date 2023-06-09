@@ -16,7 +16,7 @@ export class ThemeComponent implements OnInit{
   imageUrl = "";
   ngOnInit(): void {
     if (environment.useMock) {
-      this.imageUrl = `assets/placeholder.png`;
+      this.imageUrl = `assets/placeholder.webp`;
       return;
     }
   }

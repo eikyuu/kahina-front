@@ -17,6 +17,6 @@ export class CardAnimeComponent implements OnInit {
   public imageUrl = ``;
 
   ngOnInit(): void {
-    this.imageUrl = environment.useMock ? `assets/placeholder.png` : `${environment.baseUrl}uploads/images/poster_images/${this.anime?.posterImage[0]?.name}`;
+    this.imageUrl = environment.useMock ? `assets/placeholder.webp` : `${environment.baseUrl}uploads/images/poster_images/${this.anime?.posterImage[0]?.name}`;
   }
 }

@@ -29,7 +29,7 @@ export class CardCharacterComponent{
   }
 
   public formatImageURL(url: string): void {
-    this.imageUrl = environment.useMock ? `assets/placeholder.png` : `${environment.baseUrl}uploads/images/poster_images/${url}`;
+    this.imageUrl = environment.useMock ? `assets/placeholder.webp` : `${environment.baseUrl}uploads/images/poster_images/${url}`;
   }
 
 }

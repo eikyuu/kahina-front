@@ -13,6 +13,6 @@ export class PosterComponent implements OnInit {
   @Input() poster: any;
   imageUrl = "";
   ngOnInit(): void {
-    this.imageUrl = environment.useMock ? `assets/placeholder.png` : `${environment.baseUrl}uploads/images/poster_images/${this.poster?.posterImage[0]?.name}`;
+    this.imageUrl = environment.useMock ? `assets/placeholder.webp` : `${environment.baseUrl}uploads/images/poster_images/${this.poster?.posterImage[0]?.name}`;
   }
 }
