@@ -7,7 +7,7 @@ export const ANIMES = [
         "synopsis": "L'histoire commence pendant l'adolescence de Naruto, vers ses douze ans. Orphelin cancre et grand farceur, il fait toutes les bêtises possibles pour se faire remarquer. Son rêve : devenir le meilleur Hokage afin d'être reconnu par les habitants de son village. En effet, le démon renard à neuf queues scellé en lui a attisé la crainte et le mépris des autres villageois, qui, avec le temps, ne font plus de différence entre Kyûbi et Naruto. Malgré cela, Naruto s'entraîne dur afin de devenir genin, le premier niveau chez les ninjas. Après avoir raté l'examen genin 3 fois, il arrive finalement à recevoir son bandeau frontal de Konoha. Il est alors inclus dans une équipe de trois apprentis ninjas, avec Sakura Haruno et le talentueux Sasuke Uchiwa qui veut venger les personnes chères à ses yeux, en tuant son frère Itachi Uchiwa. Peu après, ils rencontrent leur jōnin (ninja de classe supérieure), celui qui s'occupera de leur formation : le mystérieux Kakashi Hatake. Au début craint et méprisé par ses pairs, Naruto va peu à peu monter en puissance et gagner le respect et l'affection des villageois grâce, notamment, aux combats dantesques qu'il remportera face aux ennemis les plus puissants du monde ninja.",
         "description": "L'origine de Naruto se déroule dans un monde rétro-futuriste où, bien que de nombreuses technologies modernes aient vu le jour, les ninjas et les samouraïs sont restés de véritables puissances militaires. Chaque pays a un village, qui représente la force militaire du pays, dirigé par un Kage. Les villages, à travers leurs ninjas, se livrent des guerres les uns aux autres, à petite ou grande échelle, que ce soit pour obtenir des caractéristiques avantageuses propres aux villages ennemis, ou pour soumettre un autre village et gagner en puissance. Dans ce monde ninja, il existe neuf créatures gigantesques, appelées les « Démons à queues », qui peuvent être scellées dans un humain après une cérémonie. L'humain devient un hôte et dispose alors de la puissance du démon. Douze années avant le début du récit, l'une de ces créatures attaque le village caché des feuilles du Pays du Feu, Konoha. Elle est capturée et la moitié de son esprit a été scellée dans un nouveau-né nommé Naruto Uzumaki par le quatrième Hokage : Minato Namikaze, faisant de lui le jinjûriki (hôte) du démon à neuf queues, Kyûbi.",
         "type": "tv",
-        "canonicalTitle": "Naruto",
+        "canonicalTitle": "naruto-shippuden",
         "averageRating": 2,
         "userCount": 55,
         "upVoteCount": 54,
@@ -960,7 +960,7 @@ export const ANIMES = [
                 "@type": "Anime",
                 "createdAt": "2023-05-10T18:24:49+00:00",
                 "updatedAt": "2023-05-10T18:24:49+00:00",
-                "slug": "naruto",
+                "slug": "naruto-shippuden",
                 "synopsis": "string",
                 "description": "string",
                 "type": "string",
@@ -985,10 +985,10 @@ export const ANIMES = [
                 "title": {
                     "@type": "Title",
                     "@id": "/api/.well-known/genid/3fec8a1efecf328436e4",
-                    "en": "Naruto",
-                    "enJp": "Naruto",
-                    "jaJp": "Naruto",
-                    "fr": "Naruto"
+                    "en": "naruto-shippuden",
+                    "enJp": "naruto-shippuden",
+                    "jaJp": "naruto-shippuden",
+                    "fr": "naruto-shippuden"
                 },
                 "genre": [
                     {
@@ -1183,7 +1183,7 @@ export const ANIMES = [
                 "@type": "Anime",
                 "createdAt": "2023-05-10T18:24:49+00:00",
                 "updatedAt": "2023-05-10T18:24:49+00:00",
-                "slug": "naruto",
+                "slug": "naruto-shippuden",
                 "synopsis": "string",
                 "description": "string",
                 "type": "string",
@@ -1208,10 +1208,10 @@ export const ANIMES = [
                 "title": {
                     "@type": "Title",
                     "@id": "/api/.well-known/genid/3fec8a1efecf328436e4",
-                    "en": "Naruto",
-                    "enJp": "Naruto",
-                    "jaJp": "Naruto",
-                    "fr": "Naruto"
+                    "en": "naruto-shippuden",
+                    "enJp": "naruto-shippuden",
+                    "jaJp": "naruto-shippuden",
+                    "fr": "naruto-shippuden"
                 },
                 "genre": [
                     {
@@ -1376,7 +1376,7 @@ export const ANIMES = [
                 "@type": "Anime",
                 "createdAt": "2023-05-10T18:24:49+00:00",
                 "updatedAt": "2023-05-10T18:24:49+00:00",
-                "slug": "naruto",
+                "slug": "naruto-shippuden",
                 "synopsis": "string",
                 "description": "string",
                 "type": "string",
@@ -1401,10 +1401,10 @@ export const ANIMES = [
                 "title": {
                     "@type": "Title",
                     "@id": "/api/.well-known/genid/3fec8a1efecf328436e4",
-                    "en": "Naruto",
-                    "enJp": "Naruto",
-                    "jaJp": "Naruto",
-                    "fr": "Naruto"
+                    "en": "naruto-shippuden",
+                    "enJp": "naruto-shippuden",
+                    "jaJp": "naruto-shippuden",
+                    "fr": "naruto-shippuden"
                 },
                 "genre": [
                     {
@@ -1569,7 +1569,7 @@ export const ANIMES = [
                 "@type": "Anime",
                 "createdAt": "2023-05-10T18:24:49+00:00",
                 "updatedAt": "2023-05-10T18:24:49+00:00",
-                "slug": "naruto",
+                "slug": "naruto-shippuden",
                 "synopsis": "string",
                 "description": "string",
                 "type": "string",
@@ -1594,10 +1594,10 @@ export const ANIMES = [
                 "title": {
                     "@type": "Title",
                     "@id": "/api/.well-known/genid/3fec8a1efecf328436e4",
-                    "en": "Naruto",
-                    "enJp": "Naruto",
-                    "jaJp": "Naruto",
-                    "fr": "Naruto"
+                    "en": "naruto-shippuden",
+                    "enJp": "naruto-shippuden",
+                    "jaJp": "naruto-shippuden",
+                    "fr": "naruto-shippuden"
                 },
                 "genre": [
                     {
@@ -1763,7 +1763,7 @@ export const ANIMES = [
                 "@type": "Anime",
                 "createdAt": "2023-05-10T18:24:49+00:00",
                 "updatedAt": "2023-05-10T18:24:49+00:00",
-                "slug": "naruto",
+                "slug": "naruto-shippuden",
                 "synopsis": "string",
                 "description": "string",
                 "type": "string",
@@ -1788,10 +1788,10 @@ export const ANIMES = [
                 "title": {
                     "@type": "Title",
                     "@id": "/api/.well-known/genid/3fec8a1efecf328436e4",
-                    "en": "Naruto",
-                    "enJp": "Naruto",
-                    "jaJp": "Naruto",
-                    "fr": "Naruto"
+                    "en": "naruto-shippuden",
+                    "enJp": "naruto-shippuden",
+                    "jaJp": "naruto-shippuden",
+                    "fr": "naruto-shippuden"
                 },
                 "genre": [
                     {
@@ -1956,7 +1956,7 @@ export const ANIMES = [
                 "@type": "Anime",
                 "createdAt": "2023-05-10T18:24:49+00:00",
                 "updatedAt": "2023-05-10T18:24:49+00:00",
-                "slug": "naruto",
+                "slug": "naruto-shippuden",
                 "synopsis": "string",
                 "description": "string",
                 "type": "string",
@@ -1981,10 +1981,10 @@ export const ANIMES = [
                 "title": {
                     "@type": "Title",
                     "@id": "/api/.well-known/genid/3fec8a1efecf328436e4",
-                    "en": "Naruto",
-                    "enJp": "Naruto",
-                    "jaJp": "Naruto",
-                    "fr": "Naruto"
+                    "en": "naruto-shippuden",
+                    "enJp": "naruto-shippuden",
+                    "jaJp": "naruto-shippuden",
+                    "fr": "naruto-shippuden"
                 },
                 "genre": [
                     {
@@ -2149,7 +2149,7 @@ export const ANIMES = [
                 "@type": "Anime",
                 "createdAt": "2023-05-10T18:24:49+00:00",
                 "updatedAt": "2023-05-10T18:24:49+00:00",
-                "slug": "naruto",
+                "slug": "naruto-shippuden",
                 "synopsis": "string",
                 "description": "string",
                 "type": "string",
@@ -2174,10 +2174,10 @@ export const ANIMES = [
                 "title": {
                     "@type": "Title",
                     "@id": "/api/.well-known/genid/3fec8a1efecf328436e4",
-                    "en": "Naruto",
-                    "enJp": "Naruto",
-                    "jaJp": "Naruto",
-                    "fr": "Naruto"
+                    "en": "naruto-shippuden",
+                    "enJp": "naruto-shippuden",
+                    "jaJp": "naruto-shippuden",
+                    "fr": "naruto-shippuden"
                 },
                 "genre": [
                     {
