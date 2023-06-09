@@ -1,7 +1,7 @@
 <section class="container-articles">
   <div class="container">
+    <app-title [libelle]="'articles recent'"/>
     <div *ngIf="articles">
-      <app-title [libelle]="'articles recent'"/>
       <section class="articles">
         <app-card-article
           class="one"
@@ -16,19 +16,20 @@
     </div>
     
     <div *ngIf="!articles" class="articles__skeleton">
-      <ngx-skeleton-loader
-        *ngFor="let number of [0, 1, 2, 3, 4]"
-        [theme]="{
+      <ngx-skeleton-loader 
+      *ngFor="let number of [0,1,2,3]"
+      [theme]="{
           width: '252px',
           height: '350px',
           'border-radius': '10px',
-          margin: '0 auto 2rem auto'
-        }"
+          'margin': '0 auto 0 auto'
+      }"
       />
     </div>
     
+    <app-title [libelle]="'articles les plus commentés'"/>
+
     <div *ngIf="articles">
-      <app-title [libelle]="'articles les plus commentés'"/>
       <section class="articles-commented">
         <app-card-article class="one" [article]="articles[0]"/>
         <app-card-article class="two" [article]="articles[1]"/>
@@ -40,14 +41,14 @@
     </div>
     
     <div *ngIf="!articles" class="articles__skeleton">
-      <ngx-skeleton-loader
-        *ngFor="let number of [0, 1, 2, 3, 4]"
-        [theme]="{
+      <ngx-skeleton-loader 
+      *ngFor="let number of [0,1,2,3]"
+      [theme]="{
           width: '252px',
           height: '350px',
           'border-radius': '10px',
-          margin: '0 auto 2rem auto'
-        }"
+          'margin': '0 auto 0 auto'
+      }"
       />
     </div>
   </div>
