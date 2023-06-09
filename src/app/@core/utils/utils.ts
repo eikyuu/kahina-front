@@ -47,7 +47,6 @@ export class Login {
         return;
       }
       this.loading = true;
-      console.log(this.loginForm.value);
     }
   
     

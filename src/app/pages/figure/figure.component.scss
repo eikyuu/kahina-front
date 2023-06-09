@@ -3,37 +3,42 @@
 .figure {
   @include inline-block($primary);
   text-align: center;
+
   .container-page {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 0 auto;
-    app-card-character, app-list-card-anime, app-poster {
+
+    app-card-character,
+    app-list-card-anime,
+    app-poster {
       margin-bottom: 1rem;
     }
   }
-  
+
 }
 
 
 @include respond-to("tablet") {
 
-    .container-page {
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      width: 90vw;
+  .container-page {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 90vw;
 
-    }
+  }
 }
 
 @include respond-to("desktop") {
   .container-page {
     width: 100%;
     justify-content: start;
+
     &__grid {
       display: grid;
-      grid-template-columns: repeat(4,1fr);
+      grid-template-columns: repeat(4, 1fr);
       grid-column-gap: 1.33rem;
       grid-row-gap: 1.33rem;
     }

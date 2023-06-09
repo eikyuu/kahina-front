@@ -36,7 +36,6 @@ export class PresentationComponent {
 
   public updateVote() {
      this.presentation.upVoteCount = this.presentation.upVoteCount + 1;
-     console.log('update vote', this.presentation.upVoteCount);
   }
 
 }

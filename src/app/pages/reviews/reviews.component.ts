@@ -29,7 +29,6 @@ export class ReviewsComponent extends PageDirective implements OnInit {
     .pipe(takeUntil(this.ngUnsubscribe$))
     .subscribe((data: any) => {
       this.reviews = data;
-      console.log(this.reviews);
     }
     );
   }

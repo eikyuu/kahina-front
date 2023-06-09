@@ -2,14 +2,16 @@
 
 .posters {
     @include inline-block($primary);
+
     .container-page {
-        display: flex; 
+        display: flex;
         flex-direction: column;
         align-items: center;
+
         & app-poster {
             margin-bottom: 1rem;
         }
-   }
+    }
 }
 
 @include respond-to("desktop") {
@@ -22,8 +24,7 @@
 
             app-poster:not(:nth-child(4n+1)) {
                 margin-left: 1.33rem;
-              }
+            }
         }
     }
 }
-

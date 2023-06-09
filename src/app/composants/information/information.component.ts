@@ -27,7 +27,6 @@ export class InformationComponent {
   public set anime(value: any | undefined) {
     this._anime = value;
     this.formatImageURL(value.license.licenseImage[0].name);
-    console.log(this._anime.license.licenseImage[0].name);
   }
 
   public get anime(): any | undefined {

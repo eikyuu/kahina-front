@@ -28,7 +28,6 @@ export class PostersComponent extends PageDirective implements OnInit {
     .pipe(takeUntil(this.ngUnsubscribe$))
     .subscribe((data) => {
       this.posters = data;
-      console.log(this.posters);
     }
     );
   }

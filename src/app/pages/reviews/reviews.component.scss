@@ -2,13 +2,15 @@
 
 .review {
     @include inline-block($primary);
+
     .container-page {
-         display: flex; 
-         flex-direction: column;
-         align-items: center;
-         & app-review {
-             margin-bottom: 1rem;
-         }
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        & app-review {
+            margin-bottom: 1rem;
+        }
     }
 }
 
@@ -19,12 +21,14 @@
             flex-wrap: wrap;
             width: 100%;
             justify-content: start;
+
             app-review:not(:nth-last-child(-n+4)) {
                 margin-bottom: 1rem;
             }
+
             app-review:not(:nth-child(4n+1)) {
                 margin-left: 1.33rem;
-              }
+            }
         }
     }
 

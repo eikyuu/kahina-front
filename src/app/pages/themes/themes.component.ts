@@ -25,7 +25,6 @@ export class ThemesComponent extends PageDirective implements OnInit {
     this.titleService.setTitle(this.PAGE_TITLE);
     this.animesService.getThemesByAnime(this.ROUTER_PARAM_SLUG).subscribe((data) => {
       this.themes = data;
-      console.log(this.themes);
     }
     );
   }

@@ -2,10 +2,12 @@
 
 .relations {
     @include inline-block($primary);
+
     .container-page {
-        display: flex; 
+        display: flex;
         flex-direction: column;
         align-items: center;
+
         & app-relationship {
             margin-bottom: 1rem;
         }
@@ -22,4 +24,3 @@
         }
     }
 }
-

@@ -152,7 +152,8 @@
 
     &.theme {
       justify-content: space-between;
-      & app-theme:nth-child(-n + 2)  {
+
+      & app-theme:nth-child(-n + 2) {
         margin-bottom: 1rem;
       }
     }
@@ -189,6 +190,7 @@
   .container-anime {
     text-align: left;
   }
+
   .container-page {
     width: 100%;
     justify-content: start;

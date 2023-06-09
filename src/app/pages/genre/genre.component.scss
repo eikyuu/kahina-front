@@ -14,9 +14,9 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
+
         app-relationship:not(:nth-last-child(-n+6)) {
             margin-bottom: 2rem;
         }
     }
 }
-

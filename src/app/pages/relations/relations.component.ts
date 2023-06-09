@@ -29,7 +29,6 @@ export class RelationsComponent extends PageDirective implements OnInit {
     .pipe(takeUntil(this.ngUnsubscribe$))
     .subscribe((data: any) => {
       this.relations = data;
-      console.log(this.relations);
     }
     );
   }

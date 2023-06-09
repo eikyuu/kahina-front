@@ -2,13 +2,15 @@
 
 .themes {
     @include inline-block($primary);
-        .container-page {
-         display: flex; 
-         flex-direction: column;
-         align-items: center;
-         & app-theme {
-             margin-bottom: 1rem;
-         }
+
+    .container-page {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        & app-theme {
+            margin-bottom: 1rem;
+        }
     }
 }
 
@@ -22,4 +24,3 @@
         }
     }
 }
-

@@ -2,14 +2,16 @@
 
 .figures {
     @include inline-block($primary);
+
     .container-page {
-        display: flex; 
+        display: flex;
         flex-direction: column;
         align-items: center;
-        & app-card-character  {
+
+        & app-card-character {
             margin-bottom: 1rem;
         }
-   }
+    }
 }
 
 @include respond-to("desktop") {
@@ -19,10 +21,10 @@
             flex-direction: row;
             flex-wrap: wrap;
             justify-content: space-between;
+
             app-card-character {
                 margin-bottom: 1rem;
             }
         }
     }
 }
-

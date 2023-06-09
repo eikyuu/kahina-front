@@ -25,7 +25,6 @@ export class FiguresComponent extends PageDirective implements OnInit {
     .pipe(takeUntil(this.ngUnsubscribe$))
     .subscribe((data) => {
       this.figures = data;
-      console.log(this.figures);
     }
     );
   }

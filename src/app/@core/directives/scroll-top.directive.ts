@@ -10,7 +10,6 @@ export class ScrollTopDirective {
     topPosToStartShowing = 1000;
 
     public checkScroll() {
-        console.log('checkScroll');
         const scrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
         if (scrollPosition >= this.topPosToStartShowing) {
             this.scroolToTop();
