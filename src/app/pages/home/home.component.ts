@@ -9,11 +9,12 @@ import { ArticlesComponent } from '../../composants/articles/articles.component'
 import { AnimesComponent } from '../../composants/animes/animes.component';
 import { Subject, forkJoin, takeUntil } from 'rxjs';
 import { ButtonComponent } from '../../ui/button/button.component';
+import { WelcomeComponent } from '../../composants/welcome/welcome.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, TitleComponent, BannerComponent, ArticlesComponent, AnimesComponent, NgxSkeletonLoaderModule, ButtonComponent],
+  imports: [CommonModule, TitleComponent, BannerComponent, ArticlesComponent, AnimesComponent, NgxSkeletonLoaderModule, ButtonComponent, WelcomeComponent],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
