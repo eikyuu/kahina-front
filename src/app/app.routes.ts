@@ -31,6 +31,11 @@ export const routes: Route[] = [
             import('./pages/anime/anime.component').then((m) => m.AnimeComponent),
     },
     {
+        path: 'article/:slug',
+        title: 'Kahina - Article',
+        loadComponent: () => import('./pages/article/article.component').then((m) => m.ArticleComponent),
+    },
+    {
         path: 'themes/:slug',
         title: 'Kahina - Themes',
         loadComponent: () => import('./pages/themes/themes.component').then((m) => m.ThemesComponent),

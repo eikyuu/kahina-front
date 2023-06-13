@@ -1,5 +1,5 @@
 <!-- TODO : link to the article -->
-<a href="/" [ngClass]="{'card-article--one' : one}" class="card-article">
+<a [routerLink]="['article', article.slug]" [ngClass]="{'card-article--one' : one}" class="card-article">
     <img [ngClass]="{'card-article__image--one' : one}" class="card-article__image" [src]="article.image" [alt]="article.title" />
     <h3 class="card-article__title">{{ article.title }}</h3>
     <ul class="card-article__list">

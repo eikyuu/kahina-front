@@ -5,6 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 import { trackByFn } from '../utils/utils';
 import { ScrollTopDirective } from './scroll-top.directive';
+import { ArticlesService } from '../services/articles/articles.service';
 
 @Directive({
   selector: '[appPage]',
@@ -14,6 +15,7 @@ export abstract class PageDirective extends ScrollTopDirective implements OnDest
 
     public readonly ngUnsubscribe$ = new Subject<void>();
     public animesService = inject(AnimesService);
+    public articlesService = inject(ArticlesService);
     public route = inject(ActivatedRoute);
     public titleService = inject(Title);
     public trackByFn = trackByFn;
