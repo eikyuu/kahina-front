@@ -6,6 +6,8 @@ import localFrExtra from '@angular/common/locales/extra/fr';
 import { appConfig } from './app/app.config';
 import { enableProdMode } from '@angular/core';
 import { environment } from './environments/environment';
+import {register} from 'swiper/element/bundle';
+register();
 
 if (environment.production) {
   enableProdMode();

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TitleComponent } from '../../../ui/title/title.component';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
@@ -11,13 +11,16 @@ import { trackByFn } from '../../../@core/utils/utils';
   standalone: true,
   imports: [CommonModule, TitleComponent, NgxSkeletonLoaderModule, SortByPipe, CardAnimeComponent],
   templateUrl: './list-card-anime.component.html',
-  styleUrls: ['./list-card-anime.component.scss']
+  styleUrls: ['./list-card-anime.component.scss'],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class ListCardAnimeComponent {
 
   private _animes: any;
   private _sortBy = '';
-  
+
+  @Input() public isMobile = false;
+
   @Input()
   public set sortBy(value: string) {
     this._sortBy = value;
@@ -37,4 +40,5 @@ export class ListCardAnimeComponent {
   }
 
   public trackByFn = trackByFn;
+
 }

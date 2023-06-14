@@ -1,8 +1,20 @@
 
 <section class="card-anime">
-    <ng-container *ngIf="animes; else skeleton">
-        <app-card-anime *ngFor="let anime of animes | sortBy:'desc': sortBy | slice:0:4;trackBy: trackByFn" [anime]="anime"/>
-    </ng-container>
+        <ng-container *ngIf="!isMobile">
+            <ng-container *ngIf="animes; else skeleton">
+                <app-card-anime *ngFor="let anime of animes | sortBy:'desc': sortBy | slice:0:4;trackBy: trackByFn" [anime]="anime"/>
+            </ng-container>
+        </ng-container>
+
+
+
+    <swiper-container *ngIf="isMobile"  class="mySwiper" space-between="16" slides-per-view="auto">
+        <swiper-slide *ngFor="let anime of animes | sortBy:'desc': sortBy | slice:0:4;trackBy: trackByFn">
+            <app-card-anime [anime]="anime" />
+        </swiper-slide>
+    </swiper-container>
+
+
 </section>
 
 <ng-template #skeleton>

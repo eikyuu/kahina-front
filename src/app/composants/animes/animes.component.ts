@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CardAnimeComponent } from '../../ui/card-anime/card-anime.component';
 import { TitleComponent } from '../../ui/title/title.component';
@@ -13,9 +13,10 @@ import { ListCardAnimeComponent } from './list-card-anime/list-card-anime.compon
   templateUrl: './animes.component.html',
   styleUrls: ['./animes.component.scss']
 })
-export class AnimesComponent {
+export class AnimesComponent implements OnInit {
   private _animes: any;
-  
+  public isMobile = false;
+
   @Input()
   set animes(animes: any) {
     this._animes = animes;
@@ -23,5 +24,10 @@ export class AnimesComponent {
 
   get animes(): any {
     return this._animes;
+  }
+
+  ngOnInit(): void {
+    this.isMobile = window.innerWidth <= 768;
+    console.log(this.isMobile);
   }
 }

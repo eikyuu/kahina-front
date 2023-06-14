@@ -1,54 +1,111 @@
 <section class="container-articles">
   <div class="container">
-    <app-title [libelle]="'articles recent'"/>
+    <app-title [libelle]="'articles recent'" />
     <div *ngIf="articles">
       <section class="articles">
-        <app-card-article
-          class="one"
-          [article]="articles[0]"
-          [one]="true"
-        />
-        <app-card-article class="two" [article]="articles[1]"/>
-        <app-card-article class="three" [article]="articles[2]"/>
-        <app-card-article class="four" [article]="articles[3]"/>
-        <app-card-article class="five" [article]="articles[4]"/>
+
+        <ng-container  *ngIf="!isMobile" >
+
+        <app-card-article class="one" [article]="articles[0]" [one]="true" />
+        <app-card-article class="two" [article]="articles[1]" />
+        <app-card-article class="three" [article]="articles[2]" />
+        <app-card-article class="four" [article]="articles[3]" />
+        <app-card-article class="five" [article]="articles[4]" />
+
+        </ng-container>
+
+
+
+
+
+
+        <swiper-container
+          *ngIf="isMobile"
+          class="mySwiper"
+          space-between="16"
+          slides-per-view="auto"
+        >
+          <swiper-slide>
+            <app-card-article [article]="articles[0]" />
+          </swiper-slide>
+          <swiper-slide>
+            <app-card-article [article]="articles[0]" />
+          </swiper-slide>
+          <swiper-slide>
+            <app-card-article [article]="articles[0]" />
+          </swiper-slide>
+          <swiper-slide>
+            <app-card-article [article]="articles[0]" />
+          </swiper-slide>
+          <swiper-slide>
+            <app-card-article [article]="articles[0]" />
+          </swiper-slide>
+        </swiper-container>
       </section>
     </div>
-    
+
     <div *ngIf="!articles" class="articles__skeleton">
-      <ngx-skeleton-loader 
-      *ngFor="let number of [0,1,2,3]"
-      [theme]="{
+      <ngx-skeleton-loader
+        *ngFor="let number of [0, 1, 2, 3]"
+        [theme]="{
           width: '252px',
           height: '350px',
           'border-radius': '10px',
-          'margin': '0 auto 0 auto'
-      }"
+          margin: '0 auto 0 auto'
+        }"
       />
     </div>
-    
-    <app-title [libelle]="'articles les plus commentés'"/>
+
+    <app-title [libelle]="'articles les plus commentés'" />
 
     <div *ngIf="articles">
       <section class="articles-commented">
-        <app-card-article class="one" [article]="articles[0]"/>
-        <app-card-article class="two" [article]="articles[1]"/>
-        <app-card-article class="three" [article]="articles[2]"/>
-        <app-card-article class="four" [article]="articles[3]"/>
-        <app-card-article class="five" [article]="articles[4]"/>
-        <app-card-article class="five" [article]="articles[4]"/>
+
+        <ng-container  *ngIf="!isMobile" >
+          <app-card-article class="one" [article]="articles[0]" />
+          <app-card-article class="two" [article]="articles[1]" />
+          <app-card-article class="three" [article]="articles[2]" />
+          <app-card-article class="four" [article]="articles[3]" />
+          <app-card-article class="five" [article]="articles[4]" />
+          <app-card-article class="five" [article]="articles[4]" />
+        </ng-container>
+
+
+        <swiper-container
+          *ngIf="isMobile"
+          class="mySwiper"
+          space-between="16"
+          slides-per-view="auto"
+        >
+          <swiper-slide>
+            <app-card-article [article]="articles[0]" />
+          </swiper-slide>
+          <swiper-slide>
+            <app-card-article [article]="articles[0]" />
+          </swiper-slide>
+          <swiper-slide>
+            <app-card-article [article]="articles[0]" />
+          </swiper-slide>
+          <swiper-slide>
+            <app-card-article [article]="articles[0]" />
+          </swiper-slide>
+          <swiper-slide>
+            <app-card-article [article]="articles[0]" />
+          </swiper-slide>
+        </swiper-container>
+
       </section>
     </div>
-    
+
     <div *ngIf="!articles" class="articles__skeleton">
-      <ngx-skeleton-loader 
-      *ngFor="let number of [0,1,2,3]"
-      [theme]="{
+      <ngx-skeleton-loader
+        *ngFor="let number of [0, 1, 2, 3]"
+        [theme]="{
           width: '252px',
           height: '350px',
           'border-radius': '10px',
-          'margin': '0 auto 0 auto'
-      }"
+          margin: '0 auto 0 auto'
+        }"
       />
     </div>
   </div>

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import { CardArticleComponent } from '../../ui/card-article/card-article.component';
@@ -9,10 +9,13 @@ import { TitleComponent } from '../../ui/title/title.component';
   standalone: true,
   imports: [CommonModule, CardArticleComponent, TitleComponent, NgxSkeletonLoaderModule],
   templateUrl: './articles.component.html',
-  styleUrls: ['./articles.component.scss']
+  styleUrls: ['./articles.component.scss'],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class ArticlesComponent {
+export class ArticlesComponent implements OnInit {
   private _articles: any;
+
+  public isMobile = false;
   
   @Input()
   set articles(articles: any) {
@@ -21,6 +24,12 @@ export class ArticlesComponent {
   
   public get articles(): any {
     return this._articles;
+  }
+
+
+  ngOnInit(): void {
+    this.isMobile = window.innerWidth <= 768;
+    console.log(this.isMobile);
   }
 
 }
