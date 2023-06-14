@@ -1,4 +1,4 @@
-import { CUSTOM_ELEMENTS_SCHEMA, Component, Input, OnInit } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, Component, HostListener, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import { CardArticleComponent } from '../../ui/card-article/card-article.component';
@@ -14,7 +14,8 @@ import { TitleComponent } from '../../ui/title/title.component';
 })
 export class ArticlesComponent implements OnInit {
   private _articles: any;
-
+  public WIDTH_MOBILE = 768;
+  public screenWidth: any = 0;
   public isMobile = false;
   
   @Input()
@@ -28,8 +29,14 @@ export class ArticlesComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.isMobile = window.innerWidth <= 768;
+    this.screenWidth = window.innerWidth;
+    this.isMobile = this.screenWidth <= this.WIDTH_MOBILE;
     console.log(this.isMobile);
   }
 
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any): void {
+    this.screenWidth = window.innerWidth;
+    this.isMobile = this.screenWidth <= this.WIDTH_MOBILE;
+  }
 }

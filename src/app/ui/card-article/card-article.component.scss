@@ -11,7 +11,7 @@
   width: auto;
   color: $black;
 
-  @include effect-hover;
+ 
 
   &__title {
     margin: 0;
@@ -52,6 +52,7 @@
 @include respond-to("desktop") {
   .card-article {
     width: 100%;
+    @include effect-hover;
     &--one {
       height: 100%;
       width: 500px;

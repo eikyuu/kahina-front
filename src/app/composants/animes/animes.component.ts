@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Host, HostListener, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CardAnimeComponent } from '../../ui/card-anime/card-anime.component';
 import { TitleComponent } from '../../ui/title/title.component';
@@ -14,7 +14,10 @@ import { ListCardAnimeComponent } from './list-card-anime/list-card-anime.compon
   styleUrls: ['./animes.component.scss']
 })
 export class AnimesComponent implements OnInit {
+
+  public WIDTH_MOBILE = 768;
   private _animes: any;
+  public screenWidth: any = 0;
   public isMobile = false;
 
   @Input()
@@ -27,7 +30,14 @@ export class AnimesComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.isMobile = window.innerWidth <= 768;
+    this.screenWidth = window.innerWidth;
+    this.isMobile = this.screenWidth <= this.WIDTH_MOBILE;
     console.log(this.isMobile);
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any): void {
+    this.screenWidth = window.innerWidth;
+    this.isMobile = this.screenWidth <= this.WIDTH_MOBILE;
   }
 }
