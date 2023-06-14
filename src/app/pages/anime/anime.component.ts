@@ -1,4 +1,4 @@
-import { CUSTOM_ELEMENTS_SCHEMA, Component, HostListener, OnDestroy, OnInit } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, Component, HostListener, OnDestroy, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CardArticleComponent } from '../../ui/card-article/card-article.component';
 import { TitleComponent } from '../../ui/title/title.component';
@@ -24,6 +24,7 @@ import { InformationComponent } from '../../composants/information/information.c
 import { switchMap, takeUntil } from 'rxjs';
 import * as _ from 'lodash';
 import { PageDirective } from '../../@core/directives/page.directive';
+import { ResizeService } from '../../@core/services/resize.service';
 
 @Component({
   selector: 'app-anime',
@@ -58,21 +59,9 @@ import { PageDirective } from '../../@core/directives/page.directive';
 })
 export class AnimeComponent extends PageDirective implements OnInit, OnDestroy {
 
-  public WIDTH_MOBILE = 768;
-  public screenWidth = 0;
-  public isMobile = false;
+  private resizeService: ResizeService = inject(ResizeService);
+  isMobile = false;
 
- @HostListener('window:resize', ['$event'])
-  onResize(): void {
-    this.screenWidth = window.innerWidth;
-    this.isMobile = this.screenWidth <= this.WIDTH_MOBILE;
-  }
-
-  init(): void {
-    this.screenWidth = window.innerWidth;
-    this.isMobile = this.screenWidth <= this.WIDTH_MOBILE;
-  }
-    
   constructor() {
     super();
   }
@@ -86,8 +75,10 @@ export class AnimeComponent extends PageDirective implements OnInit, OnDestroy {
 
   ngOnInit(): void {
 
-    this.init();
-
+    this.resizeService.init();
+    this.resizeService.isMobile$.subscribe(isMobile => {
+      this.isMobile = isMobile;
+    });
 
     this.titleService.setTitle(this.PAGE_TITLE);
 

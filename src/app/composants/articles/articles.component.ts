@@ -1,8 +1,10 @@
-import { CUSTOM_ELEMENTS_SCHEMA, Component, HostListener, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { CUSTOM_ELEMENTS_SCHEMA, Component, Input, OnDestroy, OnInit, inject } from '@angular/core';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import { CardArticleComponent } from '../../ui/card-article/card-article.component';
 import { TitleComponent } from '../../ui/title/title.component';
+import { ResizeService } from '../../@core/services/resize.service';
+import { Subject, takeUntil } from 'rxjs';
 
 @Component({
   selector: 'app-articles',
@@ -12,35 +14,34 @@ import { TitleComponent } from '../../ui/title/title.component';
   styleUrls: ['./articles.component.scss'],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class ArticlesComponent implements OnInit {
+export class ArticlesComponent implements OnInit, OnDestroy {
+  public readonly ngUnsubscribe$ = new Subject<void>();
+
   private _articles: any;
 
-  public WIDTH_MOBILE = 768;
-  public screenWidth = 0;
-  public isMobile = false;
-
- @HostListener('window:resize', ['$event'])
-  onResize(): void {
-    this.screenWidth = window.innerWidth;
-    this.isMobile = this.screenWidth <= this.WIDTH_MOBILE;
-  }
-
-  init(): void {
-    this.screenWidth = window.innerWidth;
-    this.isMobile = this.screenWidth <= this.WIDTH_MOBILE;
-  }
-
-  ngOnInit(): void {
-    this.init();
+  private resizeService: ResizeService = inject(ResizeService);
+  isMobile = false;
+   ngOnInit(): void {
+    this.resizeService.init();
+    this.resizeService.isMobile$
+    .pipe(takeUntil(this.ngUnsubscribe$))
+    .subscribe(isMobile => {
+      this.isMobile = isMobile;
+    });
   }
 
   @Input()
   set articles(articles: any) {
     this._articles = articles;
   }
-  
+
   public get articles(): any {
     return this._articles;
+  }
+
+  ngOnDestroy(): void {
+    this.ngUnsubscribe$.next();
+    this.ngUnsubscribe$.complete();
   }
 
 }

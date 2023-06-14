@@ -1,10 +1,12 @@
-import { Component, HostListener, Input, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CardAnimeComponent } from '../../ui/card-anime/card-anime.component';
 import { TitleComponent } from '../../ui/title/title.component';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import { SortByPipe } from '../../@core/pipes/SortByPipe.pipe';
 import { ListCardAnimeComponent } from './list-card-anime/list-card-anime.component';
+import { ResizeService } from '../../@core/services/resize.service';
+import { Subject, takeUntil } from 'rxjs';
 
 @Component({
   selector: 'app-animes',
@@ -13,28 +15,20 @@ import { ListCardAnimeComponent } from './list-card-anime/list-card-anime.compon
   templateUrl: './animes.component.html',
   styleUrls: ['./animes.component.scss']
 })
-export class AnimesComponent implements OnInit {
-
-  public WIDTH_MOBILE = 768;
-  public screenWidth = 0;
-  public isMobile = false;
-
- @HostListener('window:resize', ['$event'])
-  onResize(): void {
-    this.screenWidth = window.innerWidth;
-    this.isMobile = this.screenWidth <= this.WIDTH_MOBILE;
+export class AnimesComponent implements OnInit, OnDestroy {
+  
+  public readonly ngUnsubscribe$ = new Subject<void>();
+  private resizeService: ResizeService = inject(ResizeService);
+  isMobile = false;
+   ngOnInit(): void {
+    this.resizeService.init();
+    this.resizeService.isMobile$
+    .pipe(takeUntil(this.ngUnsubscribe$))
+    .subscribe(isMobile => {
+      this.isMobile = isMobile;
+    });
   }
 
-  init(): void {
-    this.screenWidth = window.innerWidth;
-    this.isMobile = this.screenWidth <= this.WIDTH_MOBILE;
-  }
-
-  ngOnInit(): void {
-    this.init();
-  }
-
-    
   private _animes: any;
 
   @Input()
@@ -46,6 +40,9 @@ export class AnimesComponent implements OnInit {
     return this._animes;
   }
 
-
+  ngOnDestroy(): void {
+    this.ngUnsubscribe$.next();
+    this.ngUnsubscribe$.complete();
+  }
 
 }
