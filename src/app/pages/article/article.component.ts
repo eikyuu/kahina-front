@@ -28,8 +28,6 @@ export class ArticleComponent extends PageDirective implements OnInit {
 
     ngOnInit(): void {
       this.titleService.setTitle(this.PAGE_TITLE);
-      console.log(this.route.snapshot.params['slug']);
-
       this.route.params
         .pipe(switchMap((params) => {
           return this.articlesService.getArticle(params['slug']);
@@ -38,7 +36,6 @@ export class ArticleComponent extends PageDirective implements OnInit {
         .pipe(takeUntil(this.ngUnsubscribe$))
         .subscribe((data: any) => {
           this.article = data;
-          console.log(this.article);
           this.formatImageURL(data.image);
         }
         );

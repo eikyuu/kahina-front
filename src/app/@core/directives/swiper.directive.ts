@@ -1,10 +1,10 @@
-import { AfterViewInit, Directive, HostListener } from '@angular/core';
+import { Directive, HostListener, OnInit } from '@angular/core';
 
 @Directive({
     selector: '[appSwiperDirective]',
     standalone: true,
 })
-export class SwiperDirective implements AfterViewInit {
+export class SwiperDirective implements OnInit {
 
   public WIDTH_MOBILE = 768;
   public screenWidth = 0;
@@ -16,9 +16,8 @@ export class SwiperDirective implements AfterViewInit {
     this.isMobile = this.screenWidth <= this.WIDTH_MOBILE;
   }
 
-  ngAfterViewInit(): void {
+  ngOnInit(): void {
     this.screenWidth = window.innerWidth;
     this.isMobile = this.screenWidth <= this.WIDTH_MOBILE;
-    console.log(this.isMobile);
   }
 }

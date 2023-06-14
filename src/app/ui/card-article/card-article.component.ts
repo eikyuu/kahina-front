@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 
@@ -9,12 +9,10 @@ import { RouterLink } from '@angular/router';
   templateUrl: './card-article.component.html',
   styleUrls: ['./card-article.component.scss']
 })
-export class CardArticleComponent implements OnInit {
+export class CardArticleComponent {
 
   @Input() article: any;
   @Input() one = false;
 
-  ngOnInit(): void {
-    console.log(this.article);
-  }
+
 }
