@@ -3,21 +3,13 @@
     <app-title [libelle]="'articles recent'" />
     <div *ngIf="articles">
       <section class="articles">
-
-        <ng-container  *ngIf="!isMobile" >
-
-        <app-card-article class="one" [article]="articles[0]" [one]="true" />
-        <app-card-article class="two" [article]="articles[1]" />
-        <app-card-article class="three" [article]="articles[2]" />
-        <app-card-article class="four" [article]="articles[3]" />
-        <app-card-article class="five" [article]="articles[4]" />
-
+        <ng-container *ngIf="!isMobile">
+          <app-card-article class="one" [article]="articles[0]" [one]="true" />
+          <app-card-article class="two" [article]="articles[1]" />
+          <app-card-article class="three" [article]="articles[2]" />
+          <app-card-article class="four" [article]="articles[3]" />
+          <app-card-article class="five" [article]="articles[4]" />
         </ng-container>
-
-
-
-
-
 
         <swiper-container
           *ngIf="isMobile"
@@ -61,8 +53,7 @@
 
     <div *ngIf="articles">
       <section class="articles-commented">
-
-        <ng-container  *ngIf="!isMobile" >
+        <ng-container *ngIf="!isMobile">
           <app-card-article class="one" [article]="articles[0]" />
           <app-card-article class="two" [article]="articles[1]" />
           <app-card-article class="three" [article]="articles[2]" />
@@ -70,7 +61,6 @@
           <app-card-article class="five" [article]="articles[4]" />
           <app-card-article class="five" [article]="articles[4]" />
         </ng-container>
-
 
         <swiper-container
           *ngIf="isMobile"
@@ -94,7 +84,6 @@
             <app-card-article [article]="articles[0]" />
           </swiper-slide>
         </swiper-container>
-
       </section>
     </div>
 
