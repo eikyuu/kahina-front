@@ -1,92 +1,105 @@
 <section *ngIf="anime" class="container-infos">
-    <div class="container-info__license">
-        <div>
-            <app-title libelle="license"/>
-            <div class="container-white mb-2">
-                <img [src]="imageUrl" alt="icon license" class="container-white__license">
-            </div>
-        </div>
-
-        <div class="container-white">
-            <ul class="container-white__nav">
-                <li appScrollAnchor="informations">Informations</li>
-                <li appScrollAnchor="bande-annonce">Bande-annonce</li>
-                <li appScrollAnchor="avis">Avis</li>
-                <li appScrollAnchor="personnages">Personnages</li>
-                <li appScrollAnchor="staffs">Staffs</li>
-                <li appScrollAnchor="themes">Themes</li>
-                <li appScrollAnchor="affiches">Affiches</li>
-            </ul>
-        </div>
+  <div class="container-info__license">
+    <div>
+      <app-title libelle="license" />
+      <div class="container-white mb-2">
+        <img
+          [src]="imageUrl"
+          alt="icon license"
+          class="container-white__license"
+        />
+      </div>
     </div>
-    <div class="container-info">
-        <app-title libelle="informations"/>
 
-        <div class="container-white container-white__informations">
-            <div class="infos">
-                <div class="info">
-                    <p class="info__type">Format</p>
-                    <p class="info__value">{{ anime.showType }}</p>
-                </div>
+    <div class="container-white">
+      <ul class="container-white__nav">
+        <li appScrollAnchor="informations">Informations</li>
+        <li appScrollAnchor="bande-annonce">Bande-annonce</li>
+        <li appScrollAnchor="avis">Avis</li>
+        <li appScrollAnchor="personnages">Personnages</li>
+        <li appScrollAnchor="staffs">Staffs</li>
+        <li appScrollAnchor="themes">Themes</li>
+        <li appScrollAnchor="affiches">Affiches</li>
+      </ul>
+    </div>
+  </div>
+  <div class="container-info">
+    <app-title libelle="informations" />
 
-                <div class="info">
-                    <p class="info__type">Date de début</p>
-                    <p class="info__value">{{anime.startDate | date: 'd MMMM yyyy' : '' : 'fr-FR' }}</p>
-                </div>
-
-                <div class="info">
-                    <p class="info__type">Date de fin</p>
-                    <p class="info__value">{{anime.endDate | date:  'd MMMM yyyy' : '' : 'fr-FR' }}</p>
-                </div>
-
-                <div class="info">
-                    <p class="info__type">Épisodes</p>
-                    <p class="info__value">{{ anime.episodeCount }}</p>
-                </div>
-
-                <div class="info">
-                    <p class="info__type">Durée de l'épisode </p>
-                    <p class="info__value">{{ anime.episodeLength }}</p>
-                </div>
-
-                <div class="info">
-                    <p class="info__type">Nombre de saisons</p>
-                    <p class="info__value">{{ anime.nbrSeason }}</p>
-                </div>
-
-                <div class="info">
-                    <p class="info__type">Studio</p>
-                    <p class="info__value">{{ anime.studio.headOffice }}</p>
-                </div>
-
-                <div class="info">
-                    <p class="info__type">Source</p>
-                    <p class="info__value">{{ anime.showType }}</p>
-                </div>
-                
-                <div class="info">
-                    <p class="info__type">Status</p>
-                    <p class="info__value">{{ anime.status }}</p>
-                </div>
-
-                <div class="info">
-                    <p class="info__type">Origin</p>
-                    <p class="info__value">{{ anime.origin }}</p>
-                </div>
-
-                <div class="info">
-                    <p class="info__type">Nsfw</p>
-                    <p class="info__value">{{ anime.nsfw }}</p>
-                </div>
-            </div>
-
-            <div class="genres">
-                <a [routerLink]="['/genre', genre.slug]" *ngFor="let genre of anime.genre;trackBy: trackByFn">
-                    <app-button [libelle]="'#'+genre.name" [background]="'#D9D9D9'" [color]="'#202020'"/>
-                </a>
-            </div>
-
+    <div class="container-white container-white__informations">
+      <div class="infos">
+        <div class="info">
+          <p class="info__type">Format</p>
+          <p class="info__value">{{ anime.showType }}</p>
         </div>
 
+        <div class="info">
+          <p class="info__type">Date de début</p>
+          <p class="info__value">
+            {{ anime.startDate | date : "d MMMM yyyy" : "" : "fr-FR" }}
+          </p>
+        </div>
+
+        <div class="info">
+          <p class="info__type">Date de fin</p>
+          <p class="info__value">
+            {{ anime.endDate | date : "d MMMM yyyy" : "" : "fr-FR" }}
+          </p>
+        </div>
+
+        <div class="info">
+          <p class="info__type">Épisodes</p>
+          <p class="info__value">{{ anime.episodeCount }}</p>
+        </div>
+
+        <div class="info">
+          <p class="info__type">Durée de l'épisode</p>
+          <p class="info__value">{{ anime.episodeLength }}</p>
+        </div>
+
+        <div class="info">
+          <p class="info__type">Nombre de saisons</p>
+          <p class="info__value">{{ anime.nbrSeason }}</p>
+        </div>
+
+        <div class="info">
+          <p class="info__type">Studio</p>
+          <p class="info__value">{{ anime.studio.headOffice }}</p>
+        </div>
+
+        <div class="info">
+          <p class="info__type">Source</p>
+          <p class="info__value">{{ anime.showType }}</p>
+        </div>
+
+        <div class="info">
+          <p class="info__type">Status</p>
+          <p class="info__value">{{ anime.status }}</p>
+        </div>
+
+        <div class="info">
+          <p class="info__type">Origin</p>
+          <p class="info__value">{{ anime.origin }}</p>
+        </div>
+
+        <div class="info">
+          <p class="info__type">Nsfw</p>
+          <p class="info__value">{{ anime.nsfw }}</p>
+        </div>
+      </div>
+
+      <div class="genres">
+        <a
+          [routerLink]="['/genre', genre.slug]"
+          *ngFor="let genre of anime.genre; trackBy: trackByFn"
+        >
+          <app-button
+            [libelle]="'#' + genre.name"
+            [background]="'#D9D9D9'"
+            [color]="'#202020'"
+          />
+        </a>
+      </div>
     </div>
+  </div>
 </section>

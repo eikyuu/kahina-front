@@ -5,7 +5,7 @@
         <h1>{{article.title}}</h1>
         <p>Par {{article.author}} le {{article.createdAt | date: 'd MMMM yyyy' : '' : 'fr-FR' }}</p>
     </div>
-    <div class="container container-white mt-2 p-4">
+    <div class="container container-white mt-2 p-2">
         <div [innerHTML]="article.content"></div>
     </div>
 </section>

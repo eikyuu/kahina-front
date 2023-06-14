@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit, inject } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, Component, HostListener, OnDestroy, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CardArticleComponent } from '../../ui/card-article/card-article.component';
 import { TitleComponent } from '../../ui/title/title.component';
@@ -14,21 +14,16 @@ import { RelationshipComponent } from '../../ui/relationship/relationship.compon
 import { ThemeComponent } from '../../ui/theme/theme.component';
 import { PosterComponent } from '../../ui/poster/poster.component';
 import { PresentationComponent } from '../../composants/presentation/presentation.component';
-import { ActivatedRoute, RouterLink } from '@angular/router';
-import { AnimesService } from '../../@core/services/animes/animes.service';
+import { RouterLink } from '@angular/router';
 import { Anime } from '../../@core/models/anime.model';
 import { SafePipe } from '../../@core/pipes/SafePipe.pipe';
 import { ScrollAnchorDirective } from '../../@core/directives/scroll-anchor.directive';
 import { ScrollSectionDirective } from '../../@core/directives/scroll-section.directive';
 import { ScrollManagerDirective } from '../../@core/directives/scroll-manager.directive';
-import { ScrollTopDirective } from '../../@core/directives/scroll-top.directive';
 import { InformationComponent } from '../../composants/information/information.component';
-import { trackByFn } from '../../@core/utils/utils';
-import { Subject, switchMap, takeUntil } from 'rxjs';
-import { Title } from '@angular/platform-browser';
+import { switchMap, takeUntil } from 'rxjs';
 import * as _ from 'lodash';
 import { PageDirective } from '../../@core/directives/page.directive';
-
 
 @Component({
   selector: 'app-anime',
@@ -56,24 +51,44 @@ import { PageDirective } from '../../@core/directives/page.directive';
     ScrollManagerDirective,
     RouterLink,
     NgxSkeletonLoaderModule
-  ],
+   ],
   templateUrl: './anime.component.html',
   styleUrls: ['./anime.component.scss'],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AnimeComponent extends PageDirective implements OnInit, OnDestroy {
-  
-  public anime: any;
-  public presentation: any;
-  public videoUrl: string | undefined;
 
+  public WIDTH_MOBILE = 768;
+  public screenWidth = 0;
+  public isMobile = false;
+
+ @HostListener('window:resize', ['$event'])
+  onResize(): void {
+    this.screenWidth = window.innerWidth;
+    this.isMobile = this.screenWidth <= this.WIDTH_MOBILE;
+  }
+
+  init(): void {
+    this.screenWidth = window.innerWidth;
+    this.isMobile = this.screenWidth <= this.WIDTH_MOBILE;
+  }
+    
   constructor() {
     super();
   }
+
+  public anime: any;
+  public presentation: any;
+  public videoUrl: string | undefined;
 
   ROUTER_PARAM_SLUG = this.route.snapshot.params['slug'];
   PAGE_TITLE = `Kahina - Anime - ${_.capitalize(this.ROUTER_PARAM_SLUG)}`
 
   ngOnInit(): void {
+
+    this.init();
+
+
     this.titleService.setTitle(this.PAGE_TITLE);
 
     this.route.params

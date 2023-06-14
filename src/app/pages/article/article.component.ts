@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, inject } from '@angular/core';
+import { Component, HostListener, Input, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ArticlesService } from '../../@core/services/articles/articles.service';
 import { PageDirective } from '../../@core/directives/page.directive';
@@ -14,6 +14,17 @@ import { environment } from '../../../environments/environment';
   styleUrls: ['./article.component.scss']
 })
 export class ArticleComponent extends PageDirective implements OnInit {
+
+  public WIDTH_MOBILE = 768;
+  public screenWidth = 0;
+  public isMobile = false;
+
+ @HostListener('window:resize', ['$event'])
+  onResize(): void {
+    this.screenWidth = window.innerWidth;
+    this.isMobile = this.screenWidth <= this.WIDTH_MOBILE;
+  }
+
 
   public imageUrl = '';
   public article: any;

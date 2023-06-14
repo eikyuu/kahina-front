@@ -4,15 +4,16 @@
     display: block;
     position: relative;
     overflow: hidden;
-    @include effect-hover;
     border-radius: 10px;
-        height: 250px;
-        width: 90vw;
+    height: 250px;
+    width: auto;
+
     &__img {
         height: 100%;
         width: 100%;
         object-fit: cover;
     }
+
     &__content {
         position: absolute;
         bottom: 0;
@@ -25,6 +26,7 @@
         height: 40px;
         background: rgba(0, 0, 0, 0.8);
     }
+
     &__title {
         text-align: center;
         color: $white;
@@ -36,12 +38,13 @@
         white-space: nowrap;
         width: 100%;
         padding-left: .5rem;
-      }
+    }
 }
 
 @include respond-to("tablet") {
     .relationship {
         height: 250px;
         width: calc($max-width / 6 - 1.33rem);
+        @include effect-hover;
     }
 }

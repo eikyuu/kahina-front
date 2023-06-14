@@ -7,8 +7,7 @@
     background-color: $white;
     text-decoration: none;
     border-radius: 10px;
-    width: 90vw;
-    @include effect-hover;
+    width: auto;
 
     h3 {
         width: 100%;
@@ -28,5 +27,6 @@
 @include respond-to("tablet") {
     .card-character {
         width: calc($max-width / 4 - 1rem);
+        @include effect-hover;
     }
 }

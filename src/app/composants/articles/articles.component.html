@@ -1,7 +1,7 @@
 <section class="container-articles">
   <div class="container">
     <app-title [libelle]="'articles recent'" />
-    <div *ngIf="articles">
+    <ng-container *ngIf="articles; else skeleton">
       <section class="articles">
         <ng-container *ngIf="!isMobile">
           <app-card-article class="one" [article]="articles[0]" [one]="true" />
@@ -35,23 +35,11 @@
           </swiper-slide>
         </swiper-container>
       </section>
-    </div>
-
-    <div *ngIf="!articles" class="articles__skeleton">
-      <ngx-skeleton-loader
-        *ngFor="let number of [0, 1, 2, 3]"
-        [theme]="{
-          width: '252px',
-          height: '350px',
-          'border-radius': '10px',
-          margin: '0 auto 0 auto'
-        }"
-      />
-    </div>
+    </ng-container>
 
     <app-title [libelle]="'articles les plus commentés'" />
 
-    <div *ngIf="articles">
+    <ng-container *ngIf="articles; else skeleton">
       <section class="articles-commented">
         <ng-container *ngIf="!isMobile">
           <app-card-article class="one" [article]="articles[0]" />
@@ -85,18 +73,23 @@
           </swiper-slide>
         </swiper-container>
       </section>
-    </div>
+    </ng-container>
 
-    <div *ngIf="!articles" class="articles__skeleton">
-      <ngx-skeleton-loader
-        *ngFor="let number of [0, 1, 2, 3]"
-        [theme]="{
-          width: '252px',
-          height: '350px',
-          'border-radius': '10px',
-          margin: '0 auto 0 auto'
-        }"
-      />
-    </div>
+
   </div>
 </section>
+
+
+<ng-template #skeleton>
+  <div class="container-skeleton" *ngIf="!articles">
+    <ngx-skeleton-loader
+      *ngFor="let number of [0, 1, 2, 3]"
+      [theme]="{
+        width: '252px',
+        height: '350px',
+        'border-radius': '10px',
+        margin: '0 auto 0 auto'
+      }"
+    />
+  </div>
+</ng-template>
