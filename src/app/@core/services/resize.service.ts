@@ -10,13 +10,14 @@ export class ResizeService {
   private readonly isMobileSubject = new BehaviorSubject<boolean>(false);
   public isMobile$ = this.isMobileSubject.asObservable();
 
-  public onResize(): void {
+  private onResize(): void {
     window.addEventListener('resize', () => {
       this.updateMobileStatus();
     });
   }
 
   public init(): void {
+    this.onResize();
     this.updateMobileStatus();
   }
 
