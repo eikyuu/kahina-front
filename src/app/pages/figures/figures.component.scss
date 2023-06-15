@@ -4,11 +4,9 @@
     @include inline-block($primary);
 
     .container-page {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-        & app-card-character {
+        margin: 0 auto;
+        width: 90vw;
+        .app-character {
             margin-bottom: 1rem;
         }
     }
@@ -21,10 +19,7 @@
             flex-direction: row;
             flex-wrap: wrap;
             justify-content: space-between;
-
-            app-card-character {
-                margin-bottom: 1rem;
-            }
+            width: 100%;
         }
     }
 }

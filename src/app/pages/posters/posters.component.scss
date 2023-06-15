@@ -4,11 +4,9 @@
     @include inline-block($primary);
 
     .container-page {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-        & app-poster {
+        margin: 0 auto;
+        width: 90vw;
+        .app-poster {
             margin-bottom: 1rem;
         }
     }
@@ -17,14 +15,11 @@
 @include respond-to("desktop") {
     .posters {
         .container-page {
+            display: flex;
             flex-direction: row;
             flex-wrap: wrap;
             width: 100%;
-            justify-content: start;
-
-            app-poster:not(:nth-child(4n+1)) {
-                margin-left: 1.33rem;
-            }
+            justify-content: space-between;
         }
     }
 }

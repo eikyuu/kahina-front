@@ -2,7 +2,6 @@
 
 .relations {
     @include inline-block($primary);
-
     .container-page {
         display: flex;
         flex-direction: column;

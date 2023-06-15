@@ -1,8 +1,10 @@
 <div class="posters">
     <div class="container">
         <app-title [libelle]="'Tous les posters de ' + ROUTER_PARAM_SLUG.replace('-', ' ')" [color]="'#202020'" />
-        <div class="container-page container-page__grid">
-            <app-poster *ngFor="let poster of posters | paginate : { itemsPerPage: 12, currentPage: currentPage }; trackBy:trackByFn" [poster]="poster"/>
+        <div class="container-page">
+            <div class="app-poster" *ngFor="let poster of posters | paginate : { itemsPerPage: 12, currentPage: currentPage }; trackBy:trackByFn">
+                <app-poster [poster]="poster"/>
+            </div>
         </div>
         <pagination-controls
         class="my-pagination"  
