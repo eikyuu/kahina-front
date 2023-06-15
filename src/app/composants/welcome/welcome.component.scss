@@ -50,19 +50,23 @@
 }
 
 
-@include respond-to("desktop") {
+@include respond-to("mobile-l") {
   .content {
     margin-top: -4px;
-    height: 30rem;
-
     &__ecart {
       display: flex;
       flex-direction: row;
+      flex-wrap: wrap;
 
       &__bloc {
         width: 17rem;
-        margin-bottom: 0;
       }
     }
+  }
+}
+
+@include respond-to("desktop") {
+  .content {
+    height: 30rem;
   }
 }

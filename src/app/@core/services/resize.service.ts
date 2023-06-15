@@ -6,7 +6,7 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class ResizeService {
 
-  private readonly WIDTH_MOBILE = 768;
+  private readonly WIDTH_MOBILE = 767;
   private readonly isMobileSubject = new BehaviorSubject<boolean>(false);
   public isMobile$ = this.isMobileSubject.asObservable();
 

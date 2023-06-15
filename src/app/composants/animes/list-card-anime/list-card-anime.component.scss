@@ -14,9 +14,7 @@
     }
   }
   
-  app-card-anime:not(:last-child) {
-      margin-bottom: 2rem;
-  }
+
   
   @include respond-to("tablet") {
   
@@ -28,10 +26,13 @@
     app-card-anime:not(:nth-child(4n+0)) {
       margin-right: 1rem;
     }
+    app-card-anime {
+      margin-bottom: 2rem;
+  }
   }
   
   @include respond-to("desktop") {
-    app-card-anime:not(:last-child) {
+    app-card-anime {
       margin-bottom: 0;
   }
     .card-anime {
