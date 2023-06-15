@@ -10,6 +10,9 @@
     align-items: center;
     margin: 0 auto;
     width: 90vw;
+    app-card-anime:not(:nth-child(n+5)) {
+      margin-bottom: 1rem;
+    }
   }
 }
 
