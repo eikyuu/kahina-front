@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit, inject } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, Component, OnDestroy, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PresentationComponent } from '../../composants/presentation/presentation.component';
 import { ActivatedRoute } from '@angular/router';
@@ -12,6 +12,9 @@ import { trackByFn } from '../../@core/utils/utils';
 import { PosterComponent } from '../../ui/poster/poster.component';
 import { Title } from '@angular/platform-browser';
 import * as _ from 'lodash';
+import { ResizeService } from '../../@core/services/resize.service';
+import { CardAnimeComponent } from '../../ui/card-anime/card-anime.component';
+import { SortByPipe } from '../../@core/pipes/SortByPipe.pipe';
 
 @Component({
   selector: 'app-figure',
@@ -23,10 +26,12 @@ import * as _ from 'lodash';
     ListCardAnimeComponent,
     CardCharacterComponent,
     TitleComponent,
-    PosterComponent
+    PosterComponent,
+    CardAnimeComponent,
   ],
   templateUrl: './figure.component.html',
   styleUrls: ['./figure.component.scss'],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class FigureComponent
   extends ScrollTopDirective
@@ -37,6 +42,8 @@ export class FigureComponent
   public trackByFn = trackByFn;
   private route = inject(ActivatedRoute);
   private animesService = inject(AnimesService);
+  private resizeService: ResizeService = inject(ResizeService);
+  isMobile = false;
 
   ROUTER_PARAM_TYPE: 'figure' | 'staff ' = this.route.snapshot.params['type'];
   ROUTER_PARAM_SLUG = this.route.snapshot.params['slug'];
@@ -50,6 +57,15 @@ export class FigureComponent
   public posters: any;
 
   ngOnInit(): void {
+
+    this.resizeService.init();
+    this.resizeService.isMobile$
+    .pipe(takeUntil(this.ngUnsubscribe$))
+    .subscribe(isMobile => {
+      this.isMobile = isMobile;
+    });
+
+
     this.titleService.setTitle(this.PAGE_TITLE);
   
     forkJoin([
