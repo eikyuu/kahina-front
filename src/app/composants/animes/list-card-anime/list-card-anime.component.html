@@ -1,9 +1,9 @@
-<section class="card-anime">
+<section class="container card-anime">
   <ng-container *ngIf="!isMobile">
     <ng-container *ngIf="animes; else skeleton">
       <app-card-anime
         *ngFor="
-          let anime of animes | sortBy : 'desc' : sortBy | slice : 0 : 4;
+          let anime of animes | sortBy : 'desc' : sortBy | slice : 0 : 6;
           trackBy: trackByFn
         "
         [anime]="anime"
@@ -20,7 +20,7 @@
   >
     <swiper-slide
       *ngFor="
-        let anime of animes | sortBy : 'desc' : sortBy | slice : 0 : 4;
+        let anime of animes | sortBy : 'desc' : sortBy | slice : 0 : 6;
         trackBy: trackByFn
       "
     >

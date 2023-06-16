@@ -48,8 +48,8 @@
 
 @include respond-to("desktop") {
   .card {
-    height: 350px;
-    width: calc($max-width / 4 - 0.75rem);
+    height: 225px;
+    width: calc($max-width / 6 - 0.75rem);
     @include effect-hover;
   }
 }

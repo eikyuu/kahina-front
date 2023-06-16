@@ -4,7 +4,6 @@ import { PresentationComponent } from '../../composants/presentation/presentatio
 import { ActivatedRoute } from '@angular/router';
 import { AnimesService } from '../../@core/services/animes/animes.service';
 import { Subject, forkJoin, takeUntil } from 'rxjs';
-import { ScrollTopDirective } from '../../@core/directives/scroll-top.directive';
 import { TitleComponent } from '../../ui/title/title.component';
 import { ListCardAnimeComponent } from '../../composants/animes/list-card-anime/list-card-anime.component';
 import { CardCharacterComponent } from '../../ui/card-character/card-character.component';
@@ -14,7 +13,6 @@ import { Title } from '@angular/platform-browser';
 import * as _ from 'lodash';
 import { ResizeService } from '../../@core/services/resize.service';
 import { CardAnimeComponent } from '../../ui/card-anime/card-anime.component';
-import { SortByPipe } from '../../@core/pipes/SortByPipe.pipe';
 
 @Component({
   selector: 'app-figure',
@@ -33,10 +31,7 @@ import { SortByPipe } from '../../@core/pipes/SortByPipe.pipe';
   styleUrls: ['./figure.component.scss'],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class FigureComponent
-  extends ScrollTopDirective
-  implements OnInit, OnDestroy
-{
+export class FigureComponent implements OnInit, OnDestroy {
 
   private titleService = inject(Title);
   public trackByFn = trackByFn;
@@ -60,14 +55,14 @@ export class FigureComponent
 
     this.resizeService.init();
     this.resizeService.isMobile$
-    .pipe(takeUntil(this.ngUnsubscribe$))
-    .subscribe(isMobile => {
-      this.isMobile = isMobile;
-    });
+      .pipe(takeUntil(this.ngUnsubscribe$))
+      .subscribe(isMobile => {
+        this.isMobile = isMobile;
+      });
 
 
     this.titleService.setTitle(this.PAGE_TITLE);
-  
+
     forkJoin([
       this.animesService.getAnimesByCharacter(
         this.ROUTER_PARAM_SLUG,

@@ -11,7 +11,7 @@ import { ArticlesService } from '../services/articles/articles.service';
   selector: '[appPage]',
   standalone: true,
 })
-export abstract class PageDirective extends ScrollTopDirective implements OnDestroy {
+export abstract class PageDirective implements OnDestroy {
 
     public readonly ngUnsubscribe$ = new Subject<void>();
     public animesService = inject(AnimesService);

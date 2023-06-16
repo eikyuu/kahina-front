@@ -3,7 +3,6 @@ import {RouterModule } from "@angular/router";
 import { FooterComponent } from "./footer/footer.component";
 import { HeaderComponent } from "./header/header.component";
 import { CommonModule } from '@angular/common';
-import { ScrollTopDirective } from '../../@core/directives/scroll-top.directive';
 
 @Component({
   standalone: true,
@@ -11,5 +10,5 @@ import { ScrollTopDirective } from '../../@core/directives/scroll-top.directive'
   templateUrl: "./layout.component.html",
   imports: [CommonModule, RouterModule, HeaderComponent, FooterComponent],
 })
-export class LayoutComponent extends ScrollTopDirective  {
+export class LayoutComponent  {
 }

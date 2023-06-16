@@ -1,121 +1,85 @@
 <section class="figure">
-    <div class="container">
-        <app-presentation [presentation]="presentation" />
-        <app-title [libelle]="'Animes'" [color]="'back'" />
+  <div class="container">
+    <app-presentation [presentation]="presentation" />
+    <app-title [libelle]="'Animes'" [color]="'back'" />
+    <div class="container-page">
+      <ng-container *ngIf="!isMobile">
+        <ng-container *ngIf="animes; else skeleton">
+          <app-card-anime
+            *ngFor="let anime of animes; trackBy: trackByFn"
+            [anime]="anime"
+          />
+        </ng-container>
+      </ng-container>
 
-        <div class="container-page">
-
-
-            <ng-container *ngIf="!isMobile">
-                <ng-container *ngIf="animes; else skeleton">
-
-
-                    <app-card-anime
-                    *ngFor="
-                      let anime of animes;
-                      trackBy: trackByFn
-                    "
-                    [anime]="anime"
-                  />
-                </ng-container>
-              </ng-container>
-            
-              <swiper-container
-                *ngIf="isMobile"
-                class="mySwiper"
-                space-between="16"
-                slides-per-view="auto"
-                speed="500"
-              >
-                <swiper-slide
-                                *ngFor="
-                  let anime of animes;
-                  trackBy: trackByFn
-                "
-                >
-                <app-card-anime
-
-                [anime]="anime"
-              />
-                </swiper-slide>
-              </swiper-container>
-
-
-
-        </div>
-
-        <app-title [libelle]="'staff'" [color]="'back'" />
-    
-        <div class="container-page">
-
-
-            <ng-container *ngIf="!isMobile">
-                <ng-container *ngIf="animes; else skeleton">
-                    <app-card-character [character]="character" *ngFor="let character of staffs; trackBy:trackByFn" />
-                </ng-container>
-              </ng-container>
-            
-              <swiper-container
-                *ngIf="isMobile"
-                class="mySwiper"
-                space-between="16"
-                slides-per-view="auto"
-                speed="500"
-              >
-                <swiper-slide
-                *ngFor="let character of staffs; trackBy:trackByFn"
-                >
-                <app-card-character [character]="character"  />
-                </swiper-slide>
-              </swiper-container>
-
-        </div>
-        
-        <app-title *ngIf="posters" [libelle]="'affiches'" [color]="'back'" />
-    
-        <div class="container-page">
-
-
-
-            <ng-container *ngIf="!isMobile">
-                <ng-container *ngIf="animes; else skeleton">
-                    <app-poster *ngFor="let poster of posters; trackBy:trackByFn" [poster]="poster" />
-
-                </ng-container>
-              </ng-container>
-            
-              <swiper-container
-                *ngIf="isMobile"
-                class="mySwiper"
-                space-between="16"
-                slides-per-view="auto"
-                speed="500"
-              >
-                <swiper-slide
-                *ngFor="let poster of posters; trackBy:trackByFn" 
-                >
-                <app-poster [poster]="poster" />
-
-                </swiper-slide>
-              </swiper-container>
-
-
-
-        </div>
+      <swiper-container
+        *ngIf="isMobile"
+        class="mySwiper"
+        space-between="16"
+        slides-per-view="auto"
+        speed="500"
+      >
+        <swiper-slide *ngFor="let anime of animes; trackBy: trackByFn">
+          <app-card-anime [anime]="anime" />
+        </swiper-slide>
+      </swiper-container>
     </div>
+    <app-title [libelle]="'staff'" [color]="'back'" />
+    <div class="container-page">
+      <ng-container *ngIf="!isMobile">
+        <ng-container *ngIf="animes; else skeleton">
+          <app-card-character
+            [character]="character"
+            *ngFor="let character of staffs; trackBy: trackByFn"
+          />
+        </ng-container>
+      </ng-container>
+      <swiper-container
+        *ngIf="isMobile"
+        class="mySwiper"
+        space-between="16"
+        slides-per-view="auto"
+        speed="500"
+      >
+        <swiper-slide *ngFor="let character of staffs; trackBy: trackByFn">
+          <app-card-character [character]="character" />
+        </swiper-slide>
+      </swiper-container>
+    </div>
+    <app-title *ngIf="posters" [libelle]="'affiches'" [color]="'back'" />
+    <div class="container-page">
+      <ng-container *ngIf="!isMobile">
+        <ng-container *ngIf="animes; else skeleton">
+          <app-poster
+            *ngFor="let poster of posters; trackBy: trackByFn"
+            [poster]="poster"
+          />
+        </ng-container>
+      </ng-container>
+      <swiper-container
+        *ngIf="isMobile"
+        class="mySwiper"
+        space-between="16"
+        slides-per-view="auto"
+        speed="500"
+      >
+        <swiper-slide *ngFor="let poster of posters; trackBy: trackByFn">
+          <app-poster [poster]="poster" />
+        </swiper-slide>
+      </swiper-container>
+    </div>
+  </div>
 </section>
-
 <ng-template #skeleton>
-    <div class="container-skeleton" *ngIf="!animes">
-      <ngx-skeleton-loader
-        *ngFor="let number of [0, 1, 2, 3]"
-        [theme]="{
-          width: '252px',
-          height: '350px',
-          'border-radius': '10px',
-          margin: '0 auto 0 auto'
-        }"
-      />
-    </div>
-  </ng-template>
-  
+  <div class="container-skeleton" *ngIf="!animes">
+    <ngx-skeleton-loader
+      *ngFor="let number of [0, 1, 2, 3]"
+      [theme]="{
+        width: '252px',
+        height: '350px',
+        'border-radius': '10px',
+        margin: '0 auto 0 auto'
+      }"
+    />
+  </div>
+</ng-template>
