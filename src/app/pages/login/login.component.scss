@@ -1,12 +1,65 @@
 @import "../../../themes/app.scss";
 
 .login {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #ffffff;
-    margin-top: 2rem;
-    padding: 2rem;
-    border-radius: 10px 10px 0 0;
+    text-align: center;
     border-bottom: solid 4px $primary;
+
+    .login__form {
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+        &__label {
+            &-error {
+                color: red;
+            }
+        }
+
+        .login__ctn {
+            &__remember {
+                display: flex;
+                margin-bottom: 1rem;
+                input[type=checkbox] {
+                    margin-right: 1rem;
+                }
+            }
+
+            &__forgot {
+                text-align: right;
+                margin-bottom: 1rem;
+                a {
+                    color: black;
+                }
+            }
+
+            &__submit {
+                margin-bottom: 1rem;
+                .button {
+                    width: 100%;
+                    color: $white;
+                    font-size: 1rem;
+                    background: $black;
+                    border: none;
+                    border-radius: 10px;
+                    padding: 0.5rem 1rem;
+                    cursor: pointer;
+                    transition: all 0.3s ease-in-out;
+                    &:hover {
+                        background: $primary!important;
+                        color: #000!important;
+                    }
+                }
+            }  
+        }
+
+        input[type=text], input[type=password], input[type=email]{
+            width: 100%;
+            padding: 12px 20px;
+            box-sizing: border-box;
+            margin-bottom: 1rem;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+        }
+    }
+
+
 }

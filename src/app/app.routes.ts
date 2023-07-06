@@ -76,6 +76,11 @@ export const routes: Route[] = [
         loadComponent: () => import('./pages/login/login.component').then((m) => m.LoginComponent),
     },
     {
+        path: 'inscription',
+        title: 'Register',
+        loadComponent: () => import('./pages/register/register.component').then((m) => m.RegisterComponent),
+    },
+    {
         path: '**',
         pathMatch: 'full',
         title: '404',

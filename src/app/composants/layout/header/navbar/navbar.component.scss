@@ -50,7 +50,7 @@
     flex-direction: row;
     justify-content: space-between;
     height: 50px;
-    width: calc($max-width / 2);
+    width: auto;
     background-color: $primary;
     border-top-right-radius: 15px;
     border-bottom-right-radius:15px ;

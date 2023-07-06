@@ -1,0 +1,13 @@
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <label for="name"></label>
+    <input type="text" formControlName="name" id="name" placeholder="Name">
+    <label for="password"></label>
+    <input type="password" formControlName="password" id="password" placeholder="Password">
+    <label for="password-confirm"></label>
+    <input type="password" formControlName="passwordConfirm" id="password-confirm" placeholder="Password confirm">
+    <label for="email"></label>
+    <input type="email" formControlName="email" id="email" placeholder="Email">
+
+    <button type="submit" [disabled]="!registerForm.valid">Submit</button>
+
+</form>

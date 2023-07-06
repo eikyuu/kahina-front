@@ -1,26 +1,43 @@
 <div class="login">
-    <form [formGroup]="login.loginForm" (ngSubmit)="login.submit()" class="login__ctn">
-        <div class="login__ctn__input">
-            <label for="email">
-                <div *ngIf="login.submitted && login.form?.['email']?.errors?.['required']">
+    <h1>Se connecter</h1>
+
+    <form [formGroup]="login.loginForm" (ngSubmit)="login.submit()" class="login__form">
+
+        <div class="login__ctn">
+            <label for="email" class="login__label">
+                <div *ngIf="login.submitted && login.form?.['email']?.errors?.['required']" class="login__label-error">
                     <span>Email requis</span>
                 </div>
-                <div *ngIf="login.submitted && login.form?.['email']?.errors?.['email']">
+                <div *ngIf="login.submitted && login.form?.['email']?.errors?.['email']" class="login__label-error">
                     <span>Email invalide</span>
                 </div>  
             </label>
             <input type="email" id="email" placeholder="Email" class="input" formControlName="email" required />
         </div>
-        <div class="login__ctn__input">
-            <label for="password">
-                <div *ngIf="login.submitted && login.form?.['password']?.errors?.['required']">
+
+        <div class="login__ctn">
+            <label for="password" class="login__label">
+                <div *ngIf="login.submitted && login.form?.['password']?.errors?.['required']" class="login__label-error">
                     <span>Mot de passe requis</span>
                 </div>
             </label>
             <input type="password" id="password" placeholder="Mot de passe" class="input" formControlName="password" required />
         </div>
-        <div class="login__ctn__btn">
-            <app-button [type]="'submit'" [libelle]="'Se connecter'"></app-button>
+
+        <div class="login__ctn">
+            <div class="login__ctn__remember">
+                <input type="checkbox" id="remember" class="input" formControlName="remember" />
+                <label for="remember">Se souvenir de moi</label>
+            </div>
+
+            <div class="login__ctn__submit">
+                <button type="submit" class="button" [disabled]="!login.loginForm.valid">Se connecter</button>
+            </div>
+
+            <div class="login__ctn__forgot">
+                <a href="#">Mot de passe oublié ?</a>
+            </div>
         </div>
     </form>
+    
 </div>
