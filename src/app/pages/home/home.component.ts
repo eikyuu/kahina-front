@@ -2,7 +2,6 @@ import { Component, OnDestroy, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AnimesService } from '../../@core/services/animes/animes.service';
 import { ArticlesService } from '../../@core/services/articles/articles.service';
-import { TitleComponent } from '../../ui/title/title.component';
 import { BannerComponent } from '../../ui/banner/banner.component';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import { ArticlesComponent } from '../../composants/articles/articles.component';
@@ -10,6 +9,7 @@ import { AnimesComponent } from '../../composants/animes/animes.component';
 import { Subject, forkJoin, takeUntil } from 'rxjs';
 import { ButtonComponent } from '../../ui/button/button.component';
 import { WelcomeComponent } from '../../composants/welcome/welcome.component';
+import { TitleComponent } from '../../ui/text/title/title.component';
 
 @Component({
   selector: 'app-home',

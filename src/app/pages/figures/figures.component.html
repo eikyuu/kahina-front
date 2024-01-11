@@ -1,6 +1,8 @@
 <div class="figures">
     <div class="container">
-        <app-title [libelle]="'Tous les membres de ' + ROUTER_PARAM_SLUG.replace('-', ' ')" [color]="'#202020'" />
+
+        <app-title title="'Tous les membres de ' + ROUTER_PARAM_SLUG.replace('-', ' ')" tag="h2" color="'#202020'" />
+
         <div class="container-page">
             <div class="app-character" *ngFor="let character of figures | paginate : { itemsPerPage: 12, currentPage: currentPage }; trackBy:trackByFn">
               <app-card-character [character]="character"  />

@@ -1,7 +1,8 @@
 <section class="figure">
   <div class="container">
     <app-presentation [presentation]="presentation" />
-    <app-title [libelle]="'Animes'" [color]="'back'" />
+    <app-title title="Animes" tag="h2" color="'#202020'" />
+
     <div class="container-page">
       <ng-container *ngIf="!isMobile">
         <ng-container *ngIf="animes; else skeleton">
@@ -24,7 +25,8 @@
         </swiper-slide>
       </swiper-container>
     </div>
-    <app-title [libelle]="'staff'" [color]="'back'" />
+    <app-title title="staff" tag="h2" color="'#202020'" />
+
     <div class="container-page">
       <ng-container *ngIf="!isMobile">
         <ng-container *ngIf="animes; else skeleton">

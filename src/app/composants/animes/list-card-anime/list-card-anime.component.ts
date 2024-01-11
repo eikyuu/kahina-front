@@ -1,10 +1,10 @@
 import { CUSTOM_ELEMENTS_SCHEMA, Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TitleComponent } from '../../../ui/title/title.component';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import { SortByPipe } from '../../../@core/pipes/SortByPipe.pipe';
 import { CardAnimeComponent } from '../../../ui/card-anime/card-anime.component';
 import { trackByFn } from '../../../@core/utils/utils';
+import { TitleComponent } from '../../../ui/text/title/title.component';
 
 @Component({
   selector: 'app-list-card-anime',

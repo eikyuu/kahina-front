@@ -1,10 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import * as _ from 'lodash';
-import { TitleComponent } from '../../ui/title/title.component';
 import { RelationshipComponent } from '../../ui/relationship/relationship.component';
 import { PageDirective } from '../../@core/directives/page.directive';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { TitleComponent } from '../../ui/text/title/title.component';
 
 @Component({
   selector: 'app-genre',

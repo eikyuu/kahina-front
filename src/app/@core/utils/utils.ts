@@ -43,6 +43,7 @@ export class Login {
     submit() {
       this.submitted = true;
       // stop here if form is invalid
+      console.log(this.loginForm.value, 'this.loginForm.value');
       if (this.loginForm.invalid) {
         return;
       }

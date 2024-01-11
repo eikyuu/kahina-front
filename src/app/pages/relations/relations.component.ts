@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ListCardAnimeComponent } from '../../composants/animes/list-card-anime/list-card-anime.component';
 import { RelationshipComponent } from '../../ui/relationship/relationship.component';
-import { TitleComponent } from '../../ui/title/title.component';
 import { PageDirective } from '../../@core/directives/page.directive';
 import * as _ from 'lodash';
 import { takeUntil } from 'rxjs';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { TitleComponent } from '../../ui/title/title.component';
 
 @Component({
   selector: 'app-relations',

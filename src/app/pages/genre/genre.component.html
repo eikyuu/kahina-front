@@ -1,7 +1,7 @@
 
 <div class="genre">
     <div class="container">
-        <app-title [libelle]="ROUTER_PARAM_SLUG" [color]="'#202020'" />
+        <app-title title="ROUTER_PARAM_SLUG" tag="h2" color="'#202020'" />
         <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.
         <div class="container-page container-page__grid">
             <app-relationship *ngFor="let relation of animes | paginate : { itemsPerPage: 12, currentPage: currentPage }; trackBy:trackByFn" [relationship]="relation"/>

@@ -1,6 +1,5 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TitleComponent } from '../../ui/title/title.component';
 import { RouterLink } from '@angular/router';
 import { ButtonComponent } from '../../ui/button/button.component';
 import { trackByFn } from '../../@core/utils/utils';
@@ -8,6 +7,7 @@ import { ScrollAnchorDirective } from '../../@core/directives/scroll-anchor.dire
 import { ScrollSectionDirective } from '../../@core/directives/scroll-section.directive';
 import { ScrollManagerDirective } from '../../@core/directives/scroll-manager.directive';
 import { environment } from '../../../environments/environment';
+import { TitleComponent } from '../../ui/text/title/title.component';
 
 @Component({
   selector: 'app-information',

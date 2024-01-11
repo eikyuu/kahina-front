@@ -4,8 +4,8 @@ import * as _ from 'lodash';
 import { takeUntil } from 'rxjs';
 import { PageDirective } from '../../@core/directives/page.directive';
 import { ReviewComponent } from '../../ui/review/review.component';
-import { TitleComponent } from '../../ui/title/title.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { TitleComponent } from '../../ui/text/title/title.component';
 
 @Component({
   selector: 'app-reviews',

@@ -4,7 +4,6 @@ import { PresentationComponent } from '../../composants/presentation/presentatio
 import { ActivatedRoute } from '@angular/router';
 import { AnimesService } from '../../@core/services/animes/animes.service';
 import { Subject, forkJoin, takeUntil } from 'rxjs';
-import { TitleComponent } from '../../ui/title/title.component';
 import { ListCardAnimeComponent } from '../../composants/animes/list-card-anime/list-card-anime.component';
 import { CardCharacterComponent } from '../../ui/card-character/card-character.component';
 import { trackByFn } from '../../@core/utils/utils';
@@ -13,6 +12,7 @@ import { Title } from '@angular/platform-browser';
 import * as _ from 'lodash';
 import { ResizeService } from '../../@core/services/resize.service';
 import { CardAnimeComponent } from '../../ui/card-anime/card-anime.component';
+import { TitleComponent } from '../../ui/text/title/title.component';
 
 @Component({
   selector: 'app-figure',

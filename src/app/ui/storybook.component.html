@@ -13,20 +13,20 @@
 <app-scoring></app-scoring>
 
 <section class="card-anime">
-    <app-title [libelle]="'card-anime'"></app-title>
+    <app-title title="'card-anime'" tag="h2" color="'#202020'" />
     <div class="card-anime__container" >
         <app-card-anime *ngFor="let anime of animes | slice:0:1" [anime]="anime"></app-card-anime>
     </div>
 </section>
 
 <section class="button">
-    <app-title [libelle]="'button'"></app-title>
+    <app-title [title]="'button'"/>
     <app-button [libelle]="'Lire la suite'"></app-button>
     <app-button [libelle]="'SCORE'" [background]="'#D9D9D9'" [color]="'#202020'"></app-button>
 </section>
 
 <section class="card-character">
-    <app-title [libelle]="'card character'"></app-title>
+    <app-title [title]="'card character'"/>
     <div class="card-character__container">
         <app-card-character></app-card-character>
     </div>

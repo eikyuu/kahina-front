@@ -1,6 +1,8 @@
 <section class="container-articles">
   <div class="container">
-    <app-title [libelle]="'articles recent'" />
+
+    <app-title title="articles recent" tag="h2"  />
+
     <ng-container *ngIf="articles; else skeleton">
       <section class="articles">
         <ng-container *ngIf="!isMobile">
@@ -37,7 +39,7 @@
       </section>
     </ng-container>
 
-    <app-title [libelle]="'articles les plus commentés'" />
+    <app-title title="articles les plus commentés" tag="h2"  />
 
     <ng-container *ngIf="articles; else skeleton">
       <section class="articles-commented">

@@ -3,7 +3,6 @@ import { ButtonComponent } from './button/button.component';
 import { CardAnimeComponent } from './card-anime/card-anime.component';
 import { CardArticleComponent } from './card-article/card-article.component';
 import { CardCharacterComponent } from './card-character/card-character.component';
-import { TitleComponent } from './title/title.component';
 import { CommonModule } from '@angular/common';
 import { ArticlesService } from '../@core/services/articles/articles.service';
 import { AnimesService } from '../@core/services/animes/animes.service';
@@ -13,6 +12,7 @@ import { ReviewComponent } from './review/review.component';
 import { RelationshipComponent } from './relationship/relationship.component';
 import { ThemeComponent } from './theme/theme.component';
 import { PosterComponent } from './poster/poster.component';
+import { TitleComponent } from './text/title/title.component';
 
 @Component({
   selector: 'app-storybook',

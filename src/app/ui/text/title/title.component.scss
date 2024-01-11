@@ -1,0 +1,15 @@
+@import "../../../../themes/app.scss";
+
+.baseStyle {
+    font-weight: 800;
+    letter-spacing: -0.0125em;
+    word-wrap: break-word;
+    text-transform: uppercase;
+    font-family: 'font-sans', sans-serif;
+    font-size: 24px;
+    padding: 1rem 0;
+}
+//ADD HERE YOUR CUSTOM STYLES FOR THE COMPONENT
+.alignStart {
+    text-align: start;
+}

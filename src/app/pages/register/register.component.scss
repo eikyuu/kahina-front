@@ -1,0 +1,65 @@
+@import "../../../themes/app.scss";
+
+.login {
+    text-align: center;
+    border-bottom: solid 4px $primary;
+
+    .login__title {
+        font-weight: 800;
+        letter-spacing: -0.0125em;
+        word-wrap: break-word;
+        text-transform: uppercase;
+        font-family: 'font-sans', sans-serif;
+    }
+
+    .login__form {
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+        &__label {
+            &-error {
+                color: red;
+            }
+        }
+
+        .login__ctn {
+            &__remember {
+                display: flex;
+                margin-bottom: 1rem;
+                input[type=checkbox] {
+                    margin-right: 1rem;
+                }
+            }
+
+            &__forgot {
+                text-align: right;
+                margin-bottom: 1rem;
+                a {
+                    color: black;
+                }
+            }
+
+            &__submit {
+                margin-bottom: 1rem;
+                .button {
+                    width: 100%;
+                    color: $white;
+                    font-size: 1rem;
+                    background: $black;
+                    border: none;
+                    border-radius: 10px;
+                    padding: 0.5rem 1rem;
+                    cursor: pointer;
+                    transition: all 0.3s ease-in-out;
+                    &:hover {
+                        background: $primary!important;
+                        color: #000!important;
+                    }
+                }
+            }  
+        }
+
+    }
+
+
+}

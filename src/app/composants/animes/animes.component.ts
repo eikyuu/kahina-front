@@ -1,12 +1,12 @@
 import { Component, Input, OnDestroy, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CardAnimeComponent } from '../../ui/card-anime/card-anime.component';
-import { TitleComponent } from '../../ui/title/title.component';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import { SortByPipe } from '../../@core/pipes/SortByPipe.pipe';
 import { ListCardAnimeComponent } from './list-card-anime/list-card-anime.component';
 import { ResizeService } from '../../@core/services/resize.service';
 import { Subject, takeUntil } from 'rxjs';
+import { TitleComponent } from '../../ui/text/title/title.component';
 
 @Component({
   selector: 'app-animes',

@@ -3,8 +3,8 @@ import { CommonModule } from '@angular/common';
 import { ThemeComponent } from '../../ui/theme/theme.component';
 import { PageDirective } from '../../@core/directives/page.directive';
 import * as _ from 'lodash';
-import { TitleComponent } from '../../ui/title/title.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { TitleComponent } from '../../ui/text/title/title.component';
 
 @Component({
   selector: 'app-themes',

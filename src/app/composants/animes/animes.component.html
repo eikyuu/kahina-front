@@ -1,18 +1,21 @@
 <section class="container-animes">
   <div class="container">
-    <app-title [libelle]="'anime récent'" [color]="'#202020'" />
+    <app-title color="'#202020'" tag="h2" title="anime récent"/>
+
     <app-list-card-anime
       [isMobile]="isMobile"
       [animes]="animes"
       [sortBy]="'startDate'"
     />
-    <app-title [libelle]="'anime populaire'" [color]="'#202020'" />
+    <app-title title="anime populaire" tag="h2" [color]="'#202020'" />
+    
     <app-list-card-anime
       [isMobile]="isMobile"
       [animes]="animes"
       [sortBy]="'popularityRank'"
     />
-    <app-title [libelle]="'meilleurs note'" [color]="'#202020'" />
+    <app-title title="meilleurs note" tag="h2" [color]="'#202020'" />
+
     <app-list-card-anime
       [isMobile]="isMobile"
       [animes]="animes"

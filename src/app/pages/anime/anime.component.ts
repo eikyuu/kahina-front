@@ -1,7 +1,6 @@
-import { CUSTOM_ELEMENTS_SCHEMA, Component, HostListener, OnDestroy, OnInit, inject } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, Component, OnDestroy, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CardArticleComponent } from '../../ui/card-article/card-article.component';
-import { TitleComponent } from '../../ui/title/title.component';
 import { CardAnimeComponent } from '../../ui/card-anime/card-anime.component';
 import { BannerComponent } from '../../ui/banner/banner.component';
 import { SortByPipe } from '../../@core/pipes/SortByPipe.pipe';
@@ -25,6 +24,7 @@ import { switchMap, takeUntil } from 'rxjs';
 import * as _ from 'lodash';
 import { PageDirective } from '../../@core/directives/page.directive';
 import { ResizeService } from '../../@core/services/resize.service';
+import { TitleComponent } from '../../ui/text/title/title.component';
 
 @Component({
   selector: 'app-anime',

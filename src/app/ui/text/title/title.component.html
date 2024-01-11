@@ -1,0 +1,9 @@
+<ng-container [ngSwitch]="tag">
+    <h1 *ngSwitchCase="'h1'" [class]='className + " baseStyle "' [style.color]="color">{{title}}</h1>
+    <h2 *ngSwitchCase="'h2'" [class]='className + " baseStyle "' [style.color]="color">{{title}}</h2>
+    <h3 *ngSwitchCase="'h3'" [class]='className + " baseStyle "' [style.color]="color">{{title}}</h3>
+    <h4 *ngSwitchCase="'h4'" [class]='className + " baseStyle "' [style.color]="color">{{title}}</h4>
+    <h5 *ngSwitchCase="'h5'" [class]='className + " baseStyle "' [style.color]="color">{{title}}</h5>
+    <h6 *ngSwitchCase="'h6'" [class]='className + " baseStyle "' [style.color]="color">{{title}}</h6>
+    <div *ngSwitchDefault [class]="className">{{ title }}</div>
+</ng-container>

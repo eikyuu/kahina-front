@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CardCharacterComponent } from '../../ui/card-character/card-character.component';
-import { TitleComponent } from '../../ui/title/title.component';
 import { PageDirective } from '../../@core/directives/page.directive';
 import { takeUntil } from 'rxjs';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { TitleComponent } from '../../ui/text/title/title.component';
 
 @Component({
   selector: 'app-figures',

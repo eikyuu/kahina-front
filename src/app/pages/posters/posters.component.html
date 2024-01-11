@@ -1,6 +1,8 @@
 <div class="posters">
     <div class="container">
-        <app-title [libelle]="'Tous les posters de ' + ROUTER_PARAM_SLUG.replace('-', ' ')" [color]="'#202020'" />
+
+        <app-title title="'Tous les posters de ' + ROUTER_PARAM_SLUG.replace('-', ' ')" tag="h2" color="'#202020'" />
+
         <div class="container-page">
             <div class="app-poster" *ngFor="let poster of posters | paginate : { itemsPerPage: 12, currentPage: currentPage }; trackBy:trackByFn">
                 <app-poster [poster]="poster"/>

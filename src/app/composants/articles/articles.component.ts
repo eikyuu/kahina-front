@@ -2,9 +2,9 @@ import { CommonModule } from '@angular/common';
 import { CUSTOM_ELEMENTS_SCHEMA, Component, Input, OnDestroy, OnInit, inject } from '@angular/core';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import { CardArticleComponent } from '../../ui/card-article/card-article.component';
-import { TitleComponent } from '../../ui/title/title.component';
 import { ResizeService } from '../../@core/services/resize.service';
 import { Subject, takeUntil } from 'rxjs';
+import { TitleComponent } from '../../ui/text/title/title.component';
 
 @Component({
   selector: 'app-articles',

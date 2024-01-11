@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PosterComponent } from '../../ui/poster/poster.component';
-import { TitleComponent } from '../../ui/title/title.component';
 import { PageDirective } from '../../@core/directives/page.directive';
 import * as _ from 'lodash';
 import { takeUntil } from 'rxjs';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { TitleComponent } from '../../ui/text/title/title.component';
 
 @Component({
   selector: 'app-posters',

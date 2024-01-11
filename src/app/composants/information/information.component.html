@@ -1,7 +1,9 @@
 <section *ngIf="anime" class="container-infos">
   <div class="container-info__license">
     <div>
-      <app-title libelle="license" />
+
+      <app-title title="license" tag="h2"  />
+
       <div class="container-white mb-2">
         <img
           [src]="imageUrl"
@@ -24,7 +26,7 @@
     </div>
   </div>
   <div class="container-info">
-    <app-title libelle="informations" color="'#202020'" />
+    <app-title title="informations" tag="h2" color="'#202020'" />
 
     <div class="container-white container-white__informations">
       <div class="infos">
