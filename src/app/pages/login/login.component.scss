@@ -1,12 +1,12 @@
 @import "../../../themes/app.scss";
 
 .login {
+    background-color: $white;
     text-align: center;
     border-bottom: solid 4px $primary;
-
     .login__form {
         width: 100%;
-        max-width: 400px;
+        max-width: 90vw;
         margin: 0 auto;
         &__label {
             &-error {
@@ -15,6 +15,7 @@
         }
 
         .login__ctn {
+            margin-bottom: 1rem;
             &__remember {
                 display: flex;
                 margin-bottom: 1rem;
@@ -52,6 +53,4 @@
         }
 
     }
-
-
 }

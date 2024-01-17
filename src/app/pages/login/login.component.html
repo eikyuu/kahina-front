@@ -1,14 +1,14 @@
 <div class="login">
-    <h1>Se connecter</h1>
+    <app-title libelle="Connexion" color="#202020"/>
 
-    <form [formGroup]="login.loginForm" (ngSubmit)="login.submit()" class="login__form">
+    <form [formGroup]="loginForm" (ngSubmit)="submit()" class="login__form">
 
         <div class="login__ctn">
             <label for="email" class="login__label">
-                <div *ngIf="login.submitted && login.form?.['email']?.errors?.['required']" class="login__label-error">
+                <div *ngIf="submitted && form?.['email']?.errors?.['required']" class="login__label-error">
                     <span>Email requis</span>
                 </div>
-                <div *ngIf="login.submitted && login.form?.['email']?.errors?.['email']" class="login__label-error">
+                <div *ngIf="submitted && form?.['email']?.errors?.['email']" class="login__label-error">
                     <span>Email invalide</span>
                 </div>  
             </label>
@@ -17,7 +17,7 @@
 
         <div class="login__ctn">
             <label for="password" class="login__label">
-                <div *ngIf="login.submitted && login.form?.['password']?.errors?.['required']" class="login__label-error">
+                <div *ngIf="submitted && form?.['password']?.errors?.['required']" class="login__label-error">
                     <span>Mot de passe requis</span>
                 </div>
             </label>
@@ -31,7 +31,7 @@
             </div>
 
             <div class="login__ctn__submit">
-                <button type="submit" class="button" [disabled]="!login.loginForm.valid">Se connecter</button>
+                <button type="submit" class="button" [disabled]="!loginForm.valid">Connexion</button>
             </div>
 
             <div class="login__ctn__forgot">
