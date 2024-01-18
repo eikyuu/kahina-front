@@ -4,6 +4,13 @@
     background-color: $white;
     text-align: center;
     border-bottom: solid 4px $primary;
+
+    &__label {
+        &-error {
+            color: red;
+        }
+    }
+
     .login__form {
         width: 100%;
         max-width: 90vw;

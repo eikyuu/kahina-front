@@ -1,8 +1,9 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ButtonComponent } from '../../ui/button/button.component';
-import {ReactiveFormsModule, Validators, FormBuilder} from '@angular/forms';
+import { ReactiveFormsModule, Validators, FormBuilder } from '@angular/forms';
 import { TitleComponent } from '../../ui/text/title/title.component';
+import { AuthService } from '../../@core/services/auth/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -14,15 +15,15 @@ import { TitleComponent } from '../../ui/text/title/title.component';
 
 export class LoginComponent {
   _formBuilder = inject(FormBuilder);
-  
+  private authService = inject(AuthService);
+
   submitted = false;
   loading = false;
 
-  formGroup: { email: any, password: any, remember: any} = {
+  formGroup = {
     email: ['', [Validators.required, Validators.email]],
     password: ['', [Validators.required, Validators.minLength(6)]],
-    remember: [false],
-  };
+  }
 
   loginForm = this._formBuilder.group(this.formGroup);
 
@@ -30,13 +31,22 @@ export class LoginComponent {
     return this.loginForm.controls;
   }
 
-  submit() {
+  submit(): void {
     this.submitted = true;
-    // stop here if form is invalid
     console.log(this.loginForm.value, 'this.loginForm.value');
-    if (this.loginForm.invalid) {
+
+    if (!this.form.email.value || !this.form.password.value || this.loginForm.invalid) {
       return;
     }
     this.loading = true;
+    this.authService.login(this.form.email.value, this.form.password.value).subscribe(
+      () => {
+        this.loading = false;
+      },
+      (error) => {
+        console.log(error, 'error');
+        this.loading = false;
+      }
+    );
   }
 }

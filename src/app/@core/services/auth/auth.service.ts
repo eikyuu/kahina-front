@@ -11,7 +11,13 @@ export class AuthService {
   constructor(private http:HttpClient) {}
 
   login(username: string, password: string) {
-    return this.http.post<any>('/api/login', { username, password });
+
+    if (environment.useMock) {
+      console.log('useMock login');
+      return of({}).pipe(delay(1000));
+    }
+
+    return this.http.post('/api/login', { username, password });
   }
 
   register(username: string, email: string, password: string) {
@@ -19,6 +25,6 @@ export class AuthService {
       return of({}).pipe(delay(1000));
     }
 
-    return this.http.post<any>('/api/register', { username, email, password });
+    return this.http.post('/api/register', { username, email, password });
   }
 }
