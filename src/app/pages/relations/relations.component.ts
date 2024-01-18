@@ -6,12 +6,12 @@ import { PageDirective } from '../../@core/directives/page.directive';
 import * as _ from 'lodash';
 import { takeUntil } from 'rxjs';
 import { NgxPaginationModule } from 'ngx-pagination';
-import { TitleComponent } from '../../ui/title/title.component';
+import { TitleComponent } from '../../ui/text/title/title.component';
 
 @Component({
   selector: 'app-relations',
   standalone: true,
-  imports: [CommonModule, ListCardAnimeComponent, RelationshipComponent, TitleComponent, NgxPaginationModule],
+  imports: [CommonModule, ListCardAnimeComponent, RelationshipComponent, NgxPaginationModule, TitleComponent],
   templateUrl: './relations.component.html',
   styleUrls: ['./relations.component.scss']
 })

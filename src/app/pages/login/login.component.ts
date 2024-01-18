@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ButtonComponent } from '../../ui/button/button.component';
 import {ReactiveFormsModule, Validators, FormBuilder} from '@angular/forms';
-import { TitleComponent } from '../../ui/title/title.component';
+import { TitleComponent } from '../../ui/text/title/title.component';
 
 @Component({
   selector: 'app-login',
