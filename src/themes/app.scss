@@ -32,9 +32,9 @@ main {
 }
 
 @include respond-to("tablet") {
-  // .container-white {
-  //   width: 100%;
-  // }
+  .container-white {
+    width: 100%;
+  }
 
   .scrool {
     display: block;
